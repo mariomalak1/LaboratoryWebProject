@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Laboratory|Report Problem</title>
+    </head>
+
+    <body>
+        <form calss="report" method="post">
+            <div class="Lab">
+                <!--Reporting The Lab ID-->
+                <label for="1">Laboratory ID:</label>
+                <input type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="1">
+            </div>
+            <br>
+            <div class="NumPc">
+                <!--Reporting The PC ID-->
+                <label for="2">Number of pc:</label>
+                <input type="text" name="PcId" required minlength="1" maxlength="3" id="2">
+            </div>
+            <br>
+            <div class="ProblemType">
+                <p>Problem type :</p>
+                <!--Reporting The Type Of Problem-->
+                <input type="radio" name="PcProblem" value="software" id="3" required>
+                <label for="3">Software</label>
+
+                <input type="radio" name="PcProblem" value="hardware" id="4" required>
+                <label for="4">Hardware</label>
+
+            </div>
+            <br>
+            <div class="ProblemDate">
+                <!--Reporting The Date Of Problem-->
+                <label for="5">Problem date:</label>
+                <input type="date" name="Date" required id="5">
+            </div>
+            <br>
+            <div class="ProblemDescription">
+                <!--Reporting The Problem Description-->
+                <label for="Description">Description of problem:</label>
+                <br>
+                <textarea name="Description" cols="40" rows="5" placeholder="Write the discription" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+
+
+        </form>
+    </body>
+
+
+
+
+
+
+
+</html>
