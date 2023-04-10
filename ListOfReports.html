@@ -1,126 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laboratory|List Of Reports</title>
-	<link rel="stylesheet" href="main.css">
-</head>
-<body>
-	 <header class="pageheader" id="1">
-    <h1>List of Reports</h1>
-    <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
-  </header>
-  <nav>
-    <ul>
-      <li><a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a></li>
-      <li><a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a></li>
-      <li><a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a></li>
-      <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
-      <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
-      <li><a href="ReportProblem.html" title="ReportProblem">Report A Problem</a></li>
-      <li><a href="ListOfReports.html" title="ListOfReports">List Of Reports</a></li>
-    </ul>
-  </nav>
-  <section id="saerch">
-    <input type="search" placeholder="Search">
-  </section>
-  <hr>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laboratory|List Of Reports</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="pageheader" id="1">
+      <h1>List of Reports</h1>
+      <img
+        decoding="async"
+        src="https://via.placeholder.com/50x50/F00"
+        alt="Logo"
+      />
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a>
+        </li>
+        <li>
+          <a href="LaboratoriesList.html" title="LaboratoriesList"
+            >List of Laps</a
+          >
+        </li>
+        <li>
+          <a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a>
+        </li>
+        <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
+        <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
+        <li>
+          <a href="ReportProblem.html" title="ReportProblem"
+            >Report A Problem</a
+          >
+        </li>
+        <li>
+          <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="saerch">
+      <input type="search" placeholder="Search" />
+    </section>
+    <hr />
 
-   <table>
-		 <thead>
-	    <tr>
-	      <th>ID</th>
-	      <th>Laboratory Name</th>
-	      <th>Building No.</th>
-	      <th>Floor No.</th>
-	      <th>PC ID</th>
-	      <th>Hardware | SoftWare</th>
-	      <th>Description</th>
-	      <th>Problem Date</th>
-	      <th>Delete\Edit</th>
-	    </tr>
-		</thead>
-
-		<tbody>
-	    <tr>
-	      <td>1</td>
-	      <td>Lab 1</td>
-	      <td>2</td>
-	      <td>2</td>
-	      <td>5</td>
-	      <td>Hardware</td>
-	      <td class="overflowText">this the description of the problem</td>
-	      <td>2023/4/1</td>
-
-	      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-	      <td>
-	        <a href="EditReport.html">
-	          <button type="button" class="EditButton" name="button">
-	            Edit
-	          </button>
-	        </a>
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td>2</td>
-	      <td>Lab 3</td>
-	      <td>3</td>
-	      <td>1</td>
-	      <td>8</td>
-	      <td>Software</td>
-	      <td class="overflowText">this is the second description for problem in lab 3</td>
-	      <td>2023/3/5</td>
-
-	      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-	      <td>
-	        <a href="EditReport.html">
-	          <button type="button" class="EditButton" name="button">
-	          	Edit
-	          </button>
-	        </a>
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td>3</td>
-	      <td>Lab 8</td>
-	      <td>4</td>
-	      <td>2</td>
-	      <td>19</td>
-	      <td>Hardware</td>
-	      <td class="overflowText">
-					this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19
-					this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19
-					this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19
-				</td>
-	      <td>2023/3/5</td>
-
-	      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-	      <td>
-	        <a href="EditReport.html">
-	          <button type="button" class="EditButton" name="button">
-	            Edit
-	          </button>
-	        </a>
-	      </td>
-	    </tr>
-		</tbody>
-
-		<tfoot>
-	    <tr>
-	      <td colspan="8">Number Of Reports</td>
-	      <td>3</td>
-	    </tr>
-		</tfoot>
-
-  </table>
-  <footer>
-    <h3>
-      Copyright Reserved &copy; 2023
-    </h3>
-  </footer>
-
-</body>
+    <table id="reportsTable-el"></table>
+    <footer>
+      <h3>Copyright Reserved &copy; 2023</h3>
+    </footer>
+    <script src="JS/reportedProblem.js"></script>
+  </body>
 </html>

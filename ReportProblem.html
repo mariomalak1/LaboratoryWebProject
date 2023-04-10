@@ -1,76 +1,83 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Laboratory|Report Problem</title>
+    
 </head>
 
 <body>
-
     <header class="pageheader" id="1">
         <h1>Report A problem</h1>
-        <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
+        <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo" />
     </header>
     <nav>
         <ul>
-            <li><a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a></li>
-            <li><a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a></li>
-            <li><a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a></li>
+            <li>
+                <a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a>
+            </li>
+            <li>
+                <a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a>
+            </li>
+            <li>
+                <a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a>
+            </li>
             <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
             <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
-            <li><a href="ReportProblem.html" title="ReportProblem">Report A Problem</a></li>
-            <li><a href="ListOfReports.html" title="ListOfReports">List Of Reports</a></li>
+            <li>
+                <a href="ReportProblem.html" target="_blank" title="ReportProblem">Report A Problem</a>
+            </li>
         </ul>
     </nav>
-    <hr>
+    <section id="saerch">
+        <input type="search" placeholder="Search" />
+    </section>
+    <hr />
 
-
-    <form calss="report" method="post">
+    <from calss="report">
         <div class="Lab">
             <!--Reporting The Lab ID-->
-            <label for="1">Laboratory ID:</label>
-            <input type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="1">
+            <label for="lapid-in">Laboratory ID:</label>
+            <input type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="lapid-in" />
         </div>
-        <br>
+        <br />
         <div class="NumPc">
             <!--Reporting The PC ID-->
-            <label for="2">Number of pc:</label>
-            <input type="text" name="PcId" required minlength="1" maxlength="3" id="2">
+            <label for="pcid-in">Pc ID:</label>
+            <input type="text" name="PcId" required minlength="1" maxlength="3" id="pcid-in" />
         </div>
-        <br>
+        <br />
         <div class="ProblemType">
             <p>Problem type :</p>
             <!--Reporting The Type Of Problem-->
-            <input type="radio" name="PcProblem" value="software" id="3" required>
-            <label for="3">Software</label>
+            <input type="radio" name="PcProblem" value="software" id="softwaretype-in" required />
+            <label for="softwaretype-in">Software</label>
 
-            <input type="radio" name="PcProblem" value="hardware" id="4" required>
-            <label for="4">Hardware</label>
-
+            <input type="radio" name="PcProblem" value="hardware" id="hardwaretype-in" required />
+            <label for="hardwaretype-in">Hardware</label>
         </div>
-        <br>
+        <br />
         <div class="ProblemDate">
             <!--Reporting The Date Of Problem-->
-            <label for="5">Problem date:</label>
-            <input type="date" name="Date" required id="5">
+            <label for="date-in">Problem date:</label>
+            <input type="date" name="Date" required id="date-in" />
         </div>
-        <br>
+        <br />
         <div class="ProblemDescription">
             <!--Reporting The Problem Description-->
-            <label for="Description">Description of problem:</label>
-            <br>
-            <textarea name="Description" cols="40" rows="5" placeholder="Write the discription" required></textarea>
+            <label for="desc-in">Description of problem:</label>
+            <br />
+            <textarea id="desc-in" name="Description" cols="40" rows="5" placeholder="Write the discription"
+                required></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button id="submit-btn">Submit</button>
+        </form>
+        <hr />
+        <footer>
+            <h3>Copyright Reserved &copy; 2023</h3>
+        </footer>
+        <script src="JS/reportedProblem.js"></script>
 
-
-    </form>
-    <footer>
-        <h3>
-            Copyright Reserved &copy; 2023
-        </h3>
-    </footer>
 </body>
 
 </html>

@@ -21,23 +21,44 @@ function render(problems) {
   for (let i = 0; i < problems.length; i++) {
     listItems += `
             <tr>
+                <td>${i + 1}</td>
                 <td>${problems[i]["lapId"]}</td>
                 <td>${problems[i]["pcId"]}</td>
                 <td>${problems[i]["problemType"]}</td>
-                <td>${problems[i]["date"]}</td>
                 <td>${problems[i]["description"]}</td>
+                <td>${problems[i]["date"]}</td>
+                <td>
+                  <a href="EditReport.html">
+                    <button type="button" class="EditButton" name="button">
+                      Edit
+                    </button>
+                  </a>
+                </td>
             </tr>
         `;
   }
   reportsEL.innerHTML = `
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Laboratory Name</th>
+    <th>PC ID</th>
+    <th>Hardware | SoftWare</th>
+    <th>Description</th>
+    <th>Problem Date</th>
+    <th>Delete\Edit</th>
+  </tr>
+  </thead>
+  <tbody>
+    ${listItems} 
+  </tbody>
+  <tfoot>
     <tr>
-        <th>Lap ID</th>
-        <th>PC ID</th>
-        <th>Problem Type</th>
-        <th>Date of Report</th>
-        <th>Description</th>
+      <td colspan="8">Number Of Reports</td>
+      <td>${problems.length}</td>
     </tr>
-    ${listItems}`;
+  </tfoot>
+  `;
 }
 submitBtn.addEventListener("click", function () {
   problem["lapId"] = lapIdEL.value;
@@ -52,6 +73,6 @@ submitBtn.addEventListener("click", function () {
   problems.push(problem);
   problem = {};
   localStorage.setItem("problems", JSON.stringify(problems));
-  render(problems);
+  //render(problems);
 });
 console.log(problems);
