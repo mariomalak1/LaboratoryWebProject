@@ -73,6 +73,6 @@ submitBtn.addEventListener("click", function () {
   problems.push(problem);
   problem = {};
   localStorage.setItem("problems", JSON.stringify(problems));
-  //render(problems);
+  alert("Saved");
+  render(problems);
 });
-console.log(problems);
