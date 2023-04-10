@@ -1,3 +1,65 @@
 table{
-  background-color: red;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  border:1px solid #EEEEEE;
+}
+
+table tr{
+  background-color: #eeeeee;
+  color: black;
+}
+
+tfoot tr, thead tr th{
+  background-color: #000000;
+  font-size: 18px;
+  color: black;
+  font-weight: 700;
+  color: white;
+  padding: 18px;
+}
+
+table tr button{
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.EditButton{
+  background-color: rgb(37, 131, 63);
+  border-color: rgba(130, 121, 107, 0.15);
+  box-shadow: rgba(22, 25, 28, 0.1) 0px 1px 0px;
+  color: rgb(232, 230, 227);
+  text-decoration-color: initial;
+}
+
+.ReportButton{
+  background-image: linear-gradient(-180deg, rgb(24, 122, 165) 0%, rgb(24, 120, 160) 100%);
+  color: rgb(232, 230, 227);
+  text-decoration-color: initial;
+  border-color: initial;
+}
+
+table tfoot tr td{
+  padding: 13px;
+}
+
+table tbody tr .overflowText{
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+table tbody tr:hover{
+  background-color: #fffdff;
+  color: black;
+}
+
+table tr button:hover{
+
 }

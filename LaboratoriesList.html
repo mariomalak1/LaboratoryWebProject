@@ -30,97 +30,102 @@
   <hr>
 
 
-  <table border="2px">
+  <table>
     <!-- Head -->
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Building No.</th>
-      <th>Floor No.</th>
-      <th>PCs No.</th>
-      <th>Chair No.</th>
-      <th>Status</th>
-      <th>Delete\Edit</th>
-      <th>Report</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Building No.</th>
+        <th>Floor No.</th>
+        <th>PCs No.</th>
+        <th>Chair No.</th>
+        <th>Status</th>
+        <th>Delete\Edit</th>
+        <th>Report</th>
+      </tr>
+    </thead>
 
     <!-- Body -->
-    <tr>
-      <td>1</td>
-      <td>Lab 1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>50</td>
-      <td>55</td>
-      <td>Active</td>
+    <tbody>
 
-      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-      <td>
-        <a href="EditLaboratory.html">
-          <button type="button" class="EditButton" name="button">Edit</button>
-        </a>
-      </td>
+      <tr>
+        <td>1</td>
+        <td>Lab 1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>50</td>
+        <td>55</td>
+        <td>Active</td>
+        <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+        <td>
+          <a href="EditLaboratory.html">
+            <button type="button" class="EditButton" name="button">Edit</button>
+          </a>
+        </td>
+        <!-- Button to go to report page, to Report This Lab -->
+        <td>
+          <a href="ReportProblem.html">
+            <button type="button" class="ReportButton" name="button">Report</button>
+          </a>
+        </td>
+      </tr>
 
-      <!-- Button to go to report page, to Report This Lab -->
-      <td>
-        <a href="ReportProblem.html">
-          <button type="button" class="ReportButton" name="button">Report</button>
-        </a>
-      </td>
+      <tr>
+        <td>2</td>
+        <td>Lab 2</td>
+        <td>1</td>
+        <td>2</td>
+        <td>50</td>
+        <td>55</td>
+        <td>Active</td>
 
-    </tr>
+        <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+        <td>
+          <a href="EditLaboratory.html">
+            <button type="button" class="EditButton" name="button">Edit</button>
+          </a>
+        </td>
 
-    <tr>
-      <td>2</td>
-      <td>Lab 2</td>
-      <td>1</td>
-      <td>2</td>
-      <td>50</td>
-      <td>55</td>
-      <td>Active</td>
+        <!-- Button to go to report page, to Report This Lab -->
+        <td>
+          <a href="ReportProblem.html">
+            <button type="button" class="ReportButton" name="button">Report</button>
+          </a>
+        </td>
+      </tr>
 
-      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-      <td>
-        <a href="EditLaboratory.html">
-          <button type="button" class="EditButton" name="button">Edit</button>
-        </a>
-      </td>
+      <tr>
+        <td>3</td>
+        <td>Lab 3</td>
+        <td>2</td>
+        <td>3</td>
+        <td>50</td>
+        <td>55</td>
+        <td>Under Maintenance</td>
+        <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+        <td>
+          <a href="EditLaboratory.html">
+            <button type="button" class="EditButton" name="button">Edit</button>
+          </a>
+        </td>
 
-      <!-- Button to go to report page, to Report This Lab -->
-      <td>
-        <a href="ReportProblem.html">
-          <button type="button" class="ReportButton" name="button">Report</button>
-        </a>
-      </td>
-    </tr>
+        <!-- Button to go to report page, to Report This Lab -->
+        <td>
+          <a href="ReportProblem.html">
+            <button type="button" class="ReportButton" name="button">Report</button>
+          </a>
+        </td>
+      </tr>
 
-    <tr>
-      <td>3</td>
-      <td>Lab 3</td>
-      <td>2</td>
-      <td>3</td>
-      <td>50</td>
-      <td>55</td>
-      <td>Under Maintenance</td>
-      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-      <td>
-        <a href="EditLaboratory.html">
-          <button type="button" class="EditButton" name="button">Edit</button>
-        </a>
-      </td>
+    </tbody>
 
-      <!-- Button to go to report page, to Report This Lab -->
-      <td>
-        <a href="ReportProblem.html">
-          <button type="button" class="ReportButton" name="button">Report</button>
-        </a>
-      </td>
-    </tr>
-
-    <tr>
-      <td colspan="8">Number Of Laboratories</td>
-      <td>3</td>
-    </tr>
+    <tfoot>
+      <tr>
+        <td colspan="8">Number Of Laboratories</td>
+        <td>3</td>
+      </tr>
+    </tfoot>
 
   </table>
   <footer>

@@ -27,85 +27,93 @@
   </section>
   <hr>
 
-   <table border="2px">
-    <!-- Head -->
-    <tr>
-      <th>ID</th>
-      <th>Laboratory Name</th>
-      <th>Building No.</th>
-      <th>Floor No.</th>
-      <th>PC ID</th>
-      <th>Hardware | SoftWare</th>
-      <th>Description</th>
-      <th>Problem Date</th>
-      <th>Delete\Edit</th>
-    </tr>
+   <table>
+		 <thead>
+	    <tr>
+	      <th>ID</th>
+	      <th>Laboratory Name</th>
+	      <th>Building No.</th>
+	      <th>Floor No.</th>
+	      <th>PC ID</th>
+	      <th>Hardware | SoftWare</th>
+	      <th>Description</th>
+	      <th>Problem Date</th>
+	      <th>Delete\Edit</th>
+	    </tr>
+		</thead>
 
-    <!-- Body -->
-    <tr>
-      <td>1</td>
-      <td>Lab 1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>5</td>
-      <td>Hardware</td>
-      <td>this the description of the problem</td>
-      <td>2023/4/1</td>
+		<tbody>
+	    <tr>
+	      <td>1</td>
+	      <td>Lab 1</td>
+	      <td>2</td>
+	      <td>2</td>
+	      <td>5</td>
+	      <td>Hardware</td>
+	      <td class="overflowText">this the description of the problem</td>
+	      <td>2023/4/1</td>
 
-      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-      <td>
-        <a href="EditReport.html">
-          <button type="button" class="EditButton" name="button">
-            Edit
-          </button>
-        </a>
-      </td>
-    </tr>
+	      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+	      <td>
+	        <a href="EditReport.html">
+	          <button type="button" class="EditButton" name="button">
+	            Edit
+	          </button>
+	        </a>
+	      </td>
+	    </tr>
 
-    <tr>
-      <td>2</td>
-      <td>Lab 3</td>
-      <td>3</td>
-      <td>1</td>
-      <td>8</td>
-      <td>Software</td>
-      <td>this is the second description for problem in lab 3</td>
-      <td>2023/3/5</td>
+	    <tr>
+	      <td>2</td>
+	      <td>Lab 3</td>
+	      <td>3</td>
+	      <td>1</td>
+	      <td>8</td>
+	      <td>Software</td>
+	      <td class="overflowText">this is the second description for problem in lab 3</td>
+	      <td>2023/3/5</td>
 
-      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-      <td>
-        <a href="EditReport.html">
-          <button type="button" class="EditButton" name="button">
-          	Edit
-          </button>
-        </a>
-      </td>
-    </tr>
+	      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+	      <td>
+	        <a href="EditReport.html">
+	          <button type="button" class="EditButton" name="button">
+	          	Edit
+	          </button>
+	        </a>
+	      </td>
+	    </tr>
 
-    <tr>
-      <td>3</td>
-      <td>Lab 8</td>
-      <td>4</td>
-      <td>2</td>
-      <td>19</td>
-      <td>Hardware</td>
-      <td>this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19</td>
-      <td>2023/3/5</td>
+	    <tr>
+	      <td>3</td>
+	      <td>Lab 8</td>
+	      <td>4</td>
+	      <td>2</td>
+	      <td>19</td>
+	      <td>Hardware</td>
+	      <td class="overflowText">
+					this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19
+					this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19
+					this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19this is another report to problem in lab 8 with hardware error in floor 2 in building 4 the pc id is 19
+				</td>
+	      <td>2023/3/5</td>
 
-      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
-      <td>
-        <a href="EditReport.html">
-          <button type="button" class="EditButton" name="button">
-            Edit
-          </button>
-        </a>
-      </td>
-    </tr>
+	      <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+	      <td>
+	        <a href="EditReport.html">
+	          <button type="button" class="EditButton" name="button">
+	            Edit
+	          </button>
+	        </a>
+	      </td>
+	    </tr>
+		</tbody>
 
-    <tr>
-      <td colspan="8">Number Of Reports</td>
-      <td>3</td>
-    </tr>
+		<tfoot>
+	    <tr>
+	      <td colspan="8">Number Of Reports</td>
+	      <td>3</td>
+	    </tr>
+		</tfoot>
 
   </table>
   <footer>
