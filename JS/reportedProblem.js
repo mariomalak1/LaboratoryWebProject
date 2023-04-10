@@ -54,7 +54,7 @@ function render(problems) {
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="8">Number Of Reports</td>
+      <td colspan="6">Number Of Reports</td>
       <td>${problems.length}</td>
     </tr>
   </tfoot>
