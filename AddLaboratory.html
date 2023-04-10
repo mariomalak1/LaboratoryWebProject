@@ -1,94 +1,148 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Laboratory|Add Laboratory</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Laboratory|Add Laboratory</title>
-</head>
+  <body>
+    <header class="pageheader" id="1">
+      <h1>Add Lap</h1>
+      <img
+        decoding="async"
+        src="https://via.placeholder.com/50x50/F00"
+        alt="Logo"
+      />
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a>
+        </li>
+        <li>
+          <a href="LaboratoriesList.html" title="LaboratoriesList"
+            >List of Laps</a
+          >
+        </li>
+        <li>
+          <a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a>
+        </li>
+        <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
+        <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
+        <li>
+          <a href="ReportProblem.html" title="ReportProblem"
+            >Report A Problem</a
+          >
+        </li>
+        <li>
+          <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <hr />
+    <form class="addlapform" method="post">
+      <!--Input ID will increment automaticaly in backend-->
 
-<body>
+      <!--Input Name-->
+      <div class="NameInput">
+        <label for="1">Name : </label>
+        <input
+          type="text"
+          name="LabName"
+          value=""
+          placeholder="Name of Lab"
+          id="1"
+          required
+        />
+      </div>
 
-  <header class="pageheader" id="1">
-    <h1>Add Lap</h1>
-    <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
-  </header>
-  <nav>
-    <ul>
-      <li><a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a></li>
-      <li><a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a></li>
-      <li><a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a></li>
-      <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
-      <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
-      <li><a href="ReportProblem.html" title="ReportProblem">Report A Problem</a></li>
-      <li><a href="ListOfReports.html" title="ListOfReports">List Of Reports</a></li>
-    </ul>
-  </nav>
-  <hr>
-  <form class="addlapform" method="post">
+      <br />
 
-    <!--Input ID will increment automaticaly in backend-->
+      <!--Input Building Number-->
+      <div class="BuildingNumberInput">
+        <label for="2">Building No. : </label>
+        <input
+          type="number"
+          name="LabBuildingNumber"
+          value=""
+          placeholder="Building Number of Lab"
+          id="2"
+          required
+          min="0"
+        />
+      </div>
 
-    <!--Input Name-->
-    <div class="NameInput">
-      <label for="1">Name : </label>
-      <input type="text" name="LabName" value="" placeholder="Name of Lab" id="1" required>
-    </div>
+      <br />
 
-    <br>
+      <!--Input Floor Number-->
+      <div class="FloorNumberInput">
+        <label for="3">Floor No. : </label>
+        <input
+          type="number"
+          name="LabFloorNumber"
+          value=""
+          placeholder="Floor Number of Lab"
+          id="3"
+          required
+          min="0"
+        />
+      </div>
 
-    <!--Input Building Number-->
-    <div class="BuildingNumberInput">
-      <label for="2">Building No. : </label>
-      <input type="number" name="LabBuildingNumber" value="" placeholder="Building Number of Lab" id="2" required
-        min="0">
-    </div>
+      <br />
 
-    <br>
+      <!--Input PCs Number-->
+      <div class="PCsNumberInput">
+        <label for="4">PCs Number : </label>
+        <input
+          type="number"
+          name="LabPCsNumber"
+          value=""
+          placeholder="PCs Number in Lab"
+          id="4"
+          required
+          min="0"
+        />
+      </div>
 
-    <!--Input Floor Number-->
-    <div class="FloorNumberInput">
-      <label for="3">Floor No. : </label>
-      <input type="number" name="LabFloorNumber" value="" placeholder="Floor Number of Lab" id="3" required min="0">
-    </div>
+      <br />
 
-    <br>
+      <!--Input Chair Number-->
+      <div class="ChairNumberInput">
+        <label for="5">Chair No. : </label>
+        <input
+          type="number"
+          name="LabChairNumber"
+          value=""
+          placeholder="Chair Number in Lab"
+          id="5"
+          required
+          min="0"
+        />
+      </div>
 
-    <!--Input PCs Number-->
-    <div class="PCsNumberInput">
-      <label for="4">PCs Number : </label>
-      <input type="number" name="LabPCsNumber" value="" placeholder="PCs Number in Lab" id="4" required min="0">
-    </div>
+      <!--Input Status-->
+      <div class="StatusInput">
+        <p>Status :</p>
+        <input type="radio" name="LabStatus" value="active" id="6" />
+        <label for="6">Active</label>
+        <input
+          type="radio"
+          name="LabStatus"
+          value="underMaintenance”"
+          placeholder="Chair Number in Lab"
+          id="7"
+        />
+        <label for="7">Under Maintenance</label>
+      </div>
 
+      <br />
 
-    <br>
-
-    <!--Input Chair Number-->
-    <div class="ChairNumberInput">
-      <label for="5">Chair No. : </label>
-      <input type="number" name="LabChairNumber" value="" placeholder="Chair Number in Lab" id="5" required min="0">
-    </div>
-
-
-    <!--Input Status-->
-    <div class="StatusInput">
-      <p>Status : </p>
-      <input type="radio" name="LabStatus" value="active" id="6">
-      <label for="6">Active</label>
-      <input type="radio" name="LabStatus" value="underMaintenance”" placeholder="Chair Number in Lab" id="7">
-      <label for="7">Under Maintenance</label>
-    </div>
-
-    <br>
-
-    <button type="submit">Add</button>
-    <button type="reset">Reset</button>
-
-  </form>
-  <footer>
-    <h3>
-      Copyright Reserved &copy; 2023
-    </h3>
-  </footer>
-</body>
-
+      <button type="submit">Add</button>
+      <button type="reset">Reset</button>
+    </form>
+    <footer>
+      <h3>Copyright Reserved &copy; 2023</h3>
+    </footer>
+  </body>
 </html>
