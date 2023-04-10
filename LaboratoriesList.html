@@ -1,35 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Laboratory|Laboratories List</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Laboratory|Laboratories List</title>
-  <link rel="stylesheet" href="main.css">
-</head>
+  <body>
+    <header class="pageheader" id="1">
+      <h1>List of laps</h1>
+      <img
+        decoding="async"
+        src="https://via.placeholder.com/50x50/F00"
+        alt="Logo"
+      />
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a>
+        </li>
+        <li>
+          <a href="LaboratoriesList.html" title="LaboratoriesList"
+            >List of Laps</a
+          >
+        </li>
+        <li>
+          <a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a>
+        </li>
+        <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
+        <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
+        <li>
+          <a href="ReportProblem.html" title="ReportProblem"
+            >Report A Problem</a
+          >
+        </li>
+        <li>
+          <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="saerch">
+      <input type="search" placeholder="Search" />
+    </section>
+    <hr />
 
-<body>
+    <table border="2px">
+      <!-- Head -->
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Building No.</th>
+        <th>Floor No.</th>
+        <th>PCs No.</th>
+        <th>Chair No.</th>
+        <th>Status</th>
+        <th>Delete\Edit</th>
+        <th>Report</th>
+      </tr>
 
-  <header class="pageheader" id="1">
-    <h1>List of laps</h1>
-    <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
-  </header>
-  <nav>
-    <ul>
-      <li><a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a></li>
-      <li><a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a></li>
-      <li><a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a></li>
-      <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
-      <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
-      <li><a href="ReportProblem.html" title="ReportProblem">Report A Problem</a></li>
-      <li><a href="ListOfReports.html" title="ListOfReports">List Of Reports</a></li>
-    </ul>
-  </nav>
-  <section id="saerch">
-    <input type="search" placeholder="Search">
-  </section>
-  <hr>
+      <!-- Body -->
+      <tr>
+        <td>1</td>
+        <td>Lab 1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>50</td>
+        <td>55</td>
+        <td>Active</td>
 
+        <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+        <td>
+          <a href="EditLaboratory.html">
+            <button type="button" class="EditButton" name="button">Edit</button>
+          </a>
+        </td>
 
+<<<<<<< HEAD
   <table>
     <!-- Head -->
     <thead>
@@ -57,12 +104,34 @@
         <td>50</td>
         <td>55</td>
         <td>Active</td>
+=======
+        <!-- Button to go to report page, to Report This Lab -->
+        <td>
+          <a href="ReportProblem.html">
+            <button type="button" class="ReportButton" name="button">
+              Report
+            </button>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Lab 2</td>
+        <td>1</td>
+        <td>2</td>
+        <td>50</td>
+        <td>55</td>
+        <td>Active</td>
+
+>>>>>>> 4442a7176f999ff2e232f3a44709dc68170fcd29
         <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
         <td>
           <a href="EditLaboratory.html">
             <button type="button" class="EditButton" name="button">Edit</button>
           </a>
         </td>
+<<<<<<< HEAD
         <!-- Button to go to report page, to Report This Lab -->
         <td>
           <a href="ReportProblem.html">
@@ -80,6 +149,27 @@
         <td>55</td>
         <td>Active</td>
 
+=======
+
+        <!-- Button to go to report page, to Report This Lab -->
+        <td>
+          <a href="ReportProblem.html">
+            <button type="button" class="ReportButton" name="button">
+              Report
+            </button>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Lab 3</td>
+        <td>2</td>
+        <td>3</td>
+        <td>50</td>
+        <td>55</td>
+        <td>Under Maintenance</td>
+>>>>>>> 4442a7176f999ff2e232f3a44709dc68170fcd29
         <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
         <td>
           <a href="EditLaboratory.html">
@@ -90,6 +180,7 @@
         <!-- Button to go to report page, to Report This Lab -->
         <td>
           <a href="ReportProblem.html">
+<<<<<<< HEAD
             <button type="button" class="ReportButton" name="button">Report</button>
           </a>
         </td>
@@ -134,5 +225,22 @@
     </h3>
   </footer>
 </body>
+=======
+            <button type="button" class="ReportButton" name="button">
+              Report
+            </button>
+          </a>
+        </td>
+      </tr>
+>>>>>>> 4442a7176f999ff2e232f3a44709dc68170fcd29
 
+      <tr>
+        <td colspan="8">Number Of Laboratories</td>
+        <td>3</td>
+      </tr>
+    </table>
+    <footer>
+      <h3>Copyright Reserved &copy; 2023</h3>
+    </footer>
+  </body>
 </html>
