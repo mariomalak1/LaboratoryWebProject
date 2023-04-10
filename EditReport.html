@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Laboratory|List Of Reports</title>
+</head>
+<body>
+
+    <header class="pageheader" id="1">
+        <h1>Report A problem</h1>
+        <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="AddLaboratory.html" title="AddLaboratory">Add A Lap</a></li>
+            <li><a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a></li>
+            <li><a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a></li>
+            <li><a href="AddPc.html" title="AddPc">Add PC</a></li>
+            <li><a href="PcLists.html" title="List of Pc">List of PCs</a></li>
+            <li><a href="ReportProblem.html" title="ReportProblem">Report A Problem</a></li>
+            <li><a href="ListOfReports.html" title="ListOfReports">List Of Reports</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+
+    <form calss="report" method="post">
+        <div class="Lab">
+            <!--Reporting The Lab ID-->
+            <label for="1">Laboratory ID:</label>
+            <input type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="1" value="1">
+        </div>
+        <br>
+        <div class="NumPc">
+            <!--Reporting The PC ID-->
+            <label for="2">Number of pc:</label>
+            <input type="text" name="PcId" required minlength="1" maxlength="3" id="2" value="5">
+        </div>
+        <br>
+        <div class="ProblemType">
+            <p>Problem type :</p>
+            <!--Reporting The Type Of Problem-->
+            <input type="radio" name="PcProblem" value="software" id="3" required>
+            <label for="3">Software</label>
+
+            <input type="radio" name="PcProblem" value="hardware" id="4" required checked>
+            <label for="4">Hardware</label>
+
+        </div>
+        <br>
+        <div class="ProblemDate">
+            <!--Reporting The Date Of Problem-->
+            <label for="5">Problem date:</label>
+            <input type="date" name="Date" required id="5" value="2023-04-01">
+        </div>
+        <br>
+        <div class="ProblemDescription">
+            <!--Reporting The Problem Description-->
+            <label for="Description">Description of problem:</label>
+            <br>
+            <textarea name="Description" cols="40" rows="5" placeholder="Write the discription" required>this the description of the problem</textarea>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="submit"><a href="">Delete</a></button>
+
+    </form>
+    <footer>
+        <h3>
+            Copyright Reserved &copy; 2023
+        </h3>
+    </footer>
+</body>
+</html>
