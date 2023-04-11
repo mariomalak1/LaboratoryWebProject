@@ -28,6 +28,10 @@ table tr button{
 
 }
 
+table tfoot tr td{
+  padding: 13px;
+}
+
 .EditButton{
   background-color: rgb(37, 131, 63);
   border-color: rgba(130, 121, 107, 0.15);
@@ -43,9 +47,7 @@ table tr button{
   border-color: initial;
 }
 
-table tfoot tr td{
-  padding: 13px;
-}
+
 
 table tbody tr .overflowText{
   max-width: 0;
