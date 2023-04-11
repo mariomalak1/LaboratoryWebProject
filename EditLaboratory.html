@@ -1,92 +1,147 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Laboratory|Edit Laboratory</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Laboratory|Edit Laboratory</title>
-  <link rel="stylesheet" href="main.css">
-</head>
-
-<body>
-  <!-- <header class="pageheader" id="1">
+  <body>
+    <!-- <header class="pageheader" id="1">
     <h1>Edit Lap</h1>
     <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
   </header> -->
-  <nav>
-    <ul class="nav">
-      <li class="nav"><a href="AddLaboratory.html" title="AddLaboratory" id = '_1'>Add A Lap</a></li>
-      <li class="nav"><a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a></li>
-      <li class="nav"><a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a></li>
-      <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
-      <li class="nav"><a href="ReportProblem.html" title="ReportProblem">Report A Problem</a></li>
-      <li class="nav"><a href="ListOfReports.html" title="ListOfReports">List Of Reports</a></li>
-    </ul>
-  </nav>
-  <hr>
-  <form class="form" method="post">
+    <nav>
+      <ul class="nav">
+        <li class="nav">
+          <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
+        </li>
+        <li class="nav">
+          <a href="AddLaboratory.html" title="AddLaboratory" id="_1"
+            >Add A Lap</a
+          >
+        </li>
+        <li class="nav">
+          <a href="LaboratoriesList.html" title="LaboratoriesList"
+            >List of Laps</a
+          >
+        </li>
+        <li class="nav">
+          <a href="EditLaboratory.html" title="EditLaboratory">Edit a Lap</a>
+        </li>
+        <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
+        <li class="nav">
+          <a href="ReportProblem.html" title="ReportProblem"
+            >Report A Problem</a
+          >
+        </li>
+        <li class="nav">
+          <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+        </li>
+      </ul>
+    </nav>
+    <hr />
+    <form class="form" method="post">
+      <!--Input Name-->
+      <div class="NameInput">
+        <label for="1">Name : </label>
+        <input
+          type="text"
+          name="LabName"
+          value="Lab 1"
+          placeholder="Name of Lab"
+          id="1"
+        />
+      </div>
 
-    <!--Input Name-->
-    <div class="NameInput">
-      <label for="1">Name : </label>
-      <input type="text" name="LabName" value="Lab 1" placeholder="Name of Lab" id="1">
-    </div>
+      <br />
 
-    <br>
+      <!--Input Building Number-->
+      <div class="BuildingNumberInput">
+        <label for="2">Building No. : </label>
+        <input
+          type="number"
+          name="LabBuildingNumber"
+          value="2"
+          placeholder="Building Number of Lab"
+          id="2"
+        />
+      </div>
 
-    <!--Input Building Number-->
-    <div class="BuildingNumberInput">
-      <label for="2">Building No. : </label>
-      <input type="number" name="LabBuildingNumber" value="2" placeholder="Building Number of Lab" id="2">
-    </div>
+      <br />
 
-    <br>
+      <!--Input Floor Number-->
+      <div class="FloorNumberInput">
+        <label for="3">Floor No. : </label>
+        <input
+          type="number"
+          name="LabFloorNumber"
+          value="2"
+          placeholder="Floor Number of Lab"
+          id="3"
+        />
+      </div>
 
-    <!--Input Floor Number-->
-    <div class="FloorNumberInput">
-      <label for="3">Floor No. : </label>
-      <input type="number" name="LabFloorNumber" value="2" placeholder="Floor Number of Lab" id="3">
-    </div>
+      <br />
 
-    <br>
+      <!--Input PCs Number-->
+      <div class="PCsNumberInput">
+        <label for="4">PCs Number : </label>
+        <input
+          type="number"
+          name="LabPCsNumber"
+          value="50"
+          placeholder="PCs Number in Lab"
+          id="4"
+        />
+      </div>
 
-    <!--Input PCs Number-->
-    <div class="PCsNumberInput">
-      <label for="4">PCs Number : </label>
-      <input type="number" name="LabPCsNumber" value="50" placeholder="PCs Number in Lab" id="4">
-    </div>
+      <br />
 
+      <!--Input Chair Number-->
+      <div class="ChairNumberInput">
+        <label for="5">Chair No. : </label>
+        <input
+          type="number"
+          name="LabChairNumber"
+          value="55"
+          placeholder="Chair Number in Lab"
+          id="5"
+        />
+      </div>
 
-    <br>
+      <!--Input Status-->
+      <div class="StatusInput">
+        <p>Status :</p>
+        <input
+          type="radio"
+          name="LabStatus"
+          value="active"
+          id="6"
+          checked="checked"
+        />
+        <label for="6">Active</label>
+        <input
+          type="radio"
+          name="LabStatus"
+          value="underMaintenance”"
+          placeholder="Chair Number in Lab"
+          id="7"
+        />
+        <label for="7">Under Maintenance </label>
+      </div>
 
-    <!--Input Chair Number-->
-    <div class="ChairNumberInput">
-      <label for="5">Chair No. : </label>
-      <input type="number" name="LabChairNumber" value="55" placeholder="Chair Number in Lab" id="5">
-    </div>
+      <br />
 
-    <!--Input Status-->
-    <div class="StatusInput">
-      <p>Status : </p>
-      <input type="radio" name="LabStatus" value="active" id="6" checked="checked">
-      <label for="6">Active</label>
-      <input type="radio" name="LabStatus" value="underMaintenance”" placeholder="Chair Number in Lab" id="7">
-      <label for="7">Under Maintenance </label>
-    </div>
-
-    <br>
-
-    <button type="submit">Save</button>
-    <button>
-      <a href="DeleteConfiramtion.html">
-        Delete Lab
-      </a>
-    </button>
-  </form>
-  <footer>
-    <h3>
-      Copyright Reserved &copy; 2023
-    </h3>
-  </footer>
-</body>
-
+      <button type="submit">Save</button>
+      <button>
+        <a href="DeleteConfiramtion.html"> Delete Lab </a>
+      </button>
+    </form>
+    <footer>
+      <div>
+        <h3>Copyright Reserved &copy; 2023</h3>
+      </div>
+    </footer>
+  </body>
 </html>

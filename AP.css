@@ -1,0 +1,28 @@
+body {
+    background-image: url("imgs/crytsal-blue-cube-4k-ku.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+div div{
+    
+    font-size: 50px;
+    margin: 20px;
+    background-color: rgb(0 0 0 / 35%); 
+    border-radius: 5px;
+    padding: 30px;
+    align-content: center;
+    text-align: center ;
+}
+.mainclass {
+    width: 80%;
+    margin: auto;
+    margin-top:10% ;
+    text-shadow: 5px 2px 12px blue;
+}
+a {
+    color: white;
+    text-shadow: 5 1 0 blue;
+    text-decoration: none;
+    
+}
