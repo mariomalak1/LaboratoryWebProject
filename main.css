@@ -1,3 +1,48 @@
+ul.nav {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+    background-color: #909090;
+  }
+
+  li {
+    float: right;
+    top: 0;
+    border-left: 1px solid #bbb;
+    font-size: 22px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+
+  }
+
+  li.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    position: relative;
+  }
+li.nav a:after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    height: 5px;
+    width:0%;
+    left:0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+li.nav a:hover{
+    color:black;
+}
+li.nav a:hover:after{
+    width:100%;
+}
+
+
+
 table{
   margin: auto;
   text-align: center;
@@ -45,23 +90,4 @@ table tfoot tr td{
   color: rgb(232, 230, 227);
   text-decoration-color: initial;
   border-color: initial;
-}
-
-
-
-table tbody tr .overflowText{
-  max-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
-table tbody tr:hover{
-  background-color: #fffdff;
-  color: black;
-}
-
-table tr button:hover{
-
 }
