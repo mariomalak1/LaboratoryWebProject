@@ -32,13 +32,12 @@ li.nav a:after{
     width:0%;
     left:0;
     bottom: -4px;
-    transition: 0.3s;
-}
+    transition: 0.3s;}
 li.nav a:hover{
     color:black;
 }
 li.nav a:hover:after{
-    width:100%;
+  width:100%;
 }
 
 
@@ -70,12 +69,34 @@ table tr button{
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-
 }
 
 table tfoot tr td{
   padding: 13px;
 }
+
+
+table tbody tr .overflowText{
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+table tbody tr:hover{
+  background-color: #fffdff;
+  color: black;
+}
+
+.EditButton:hover{
+  background-color: #28B463;
+}
+
+.ReportButton:hover{
+  background-color: #00b4ffa3; 
+}
+
 
 .EditButton{
   background-color: rgb(37, 131, 63);
@@ -86,16 +107,19 @@ table tfoot tr td{
 }
 
 .ReportButton{
-  background-image: linear-gradient(-180deg, rgb(24, 122, 165) 0%, rgb(24, 120, 160) 100%);
+  background-color: #0c9edb;
   color: rgb(232, 230, 227);
   text-decoration-color: initial;
   border-color: initial;
 }
 footer {
+  width: 100%;
   background-color: #909090;
   text-align: center;
   color: white;
   padding: 10px;
+  margin-top: 15%;
+  position: absolute;
 }
 footer .footerauth{
   border-left: 1px solid #bbb;
