@@ -8,10 +8,14 @@ const hTypeEl = document.getElementById("hardwaretype-in");
 const dateEl = document.getElementById("date-in");
 const descEl = document.getElementById("desc-in");
 const submitBtn = document.getElementById("submit-btn");
+
 const loadFromLocalStortage = JSON.parse(localStorage.getItem("problems"));
+const loadIndex = JSON.parse(localStorage.getItem("indx"));
+let indx;
 window.onload = function () {
   if (loadFromLocalStortage) {
     problems = loadFromLocalStortage;
+    indx = loadIndex;
     render(problems);
   }
 };
@@ -29,7 +33,7 @@ function render(problems) {
                 <td>${problems[i]["date"]}</td>
                 <td>
                   <a href="EditReport.html">
-                    <button type="button" class="EditButton" name="button">
+                    <button id="tableEdit-btn"  class="EditButton" name="button" onclick="saveIndx(${i})">
                       Edit
                     </button>
                   </a>
@@ -76,3 +80,7 @@ submitBtn.addEventListener("click", function () {
   alert("Saved");
   render(problems);
 });
+function saveIndx(index) {
+  localStorage.setItem("indx", JSON.stringify(index));
+
+}
