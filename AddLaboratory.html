@@ -36,53 +36,36 @@
     </ul>
   </nav>
   <hr />
-  <form class="addlapform" method="post">
+  <form class="formback " method="post">
     <!--Input ID will increment automaticaly in backend-->
 
     <!--Input Name-->
-    <div class="NameInput">
-      <label for="name">Name : </label>
-      <input type="text" name="LabName" value="" placeholder="Name of Lab" id="name" required />
+    <div class="NameInput  pb-10 ">
+      <input class="inputsyle" type="text" name="LabName" value="" placeholder="Name of Lab" id="name" required />
     </div>
-
-    <br />
-
     <!--Input Building Number-->
-    <div class="BuildingNumberInput">
-      <label for="buildnumber">Building No. : </label>
-      <input type="number" name="LabBuildingNumber" value="" placeholder="Building Number of Lab" id="buildnumber"
+    <div class="BuildingNumberInput  pb-10">
+      <input class="inputsyle" type="number" name="LabBuildingNumber" value="" placeholder="Building Number of Lab"
+        id="buildnumber" required min="0" />
+    </div>
+    <!--Input Floor Number-->
+    <div class="FloorNumberInput  pb-10">
+      <input class="inputsyle" type="number" name="LabFloorNumber" value="" placeholder="Floor Number of Lab"
+        id="floornumber" required min="0" />
+    </div>
+    <!--Input PCs Number-->
+    <div class="PCsNumberInput  pb-10">
+      <input class="inputsyle" type="number" name="LabPCsNumber" value="" placeholder="PCs Number in Lab" id="pcnumber"
         required min="0" />
     </div>
-
-    <br />
-
-    <!--Input Floor Number-->
-    <div class="FloorNumberInput">
-      <label for="floornumber">Floor No. : </label>
-      <input type="number" name="LabFloorNumber" value="" placeholder="Floor Number of Lab" id="floornumber" required
-        min="0" />
-    </div>
-
-    <br />
-
-    <!--Input PCs Number-->
-    <div class="PCsNumberInput">
-      <label for="pcnumber">PCs Number : </label>
-      <input type="number" name="LabPCsNumber" value="" placeholder="PCs Number in Lab" id="pcnumber" required
-        min="0" />
-    </div>
-
-    <br />
-
     <!--Input Chair Number-->
-    <div class="ChairNumberInput">
-      <label for="chairnumber">Chair No. : </label>
-      <input type="number" name="LabChairNumber" value="" placeholder="Chair Number in Lab" id="chairnumber" required
-        min="0" />
+    <div class="ChairNumberInput  pb-10">
+      <input class="inputsyle" type="number" name="LabChairNumber" value="" placeholder="Chair Number in Lab"
+        id="chairnumber" required min="0" />
     </div>
 
     <!--Input Status-->
-    <div class="StatusInput">
+    <div class="StatusInput pb-10 ">
       <p>Status :</p>
       <input type="radio" name="LabStatus" value="active" id="active" />
       <label for="active">Active</label>
@@ -90,11 +73,11 @@
         id="underMaintenance" />
       <label for="underMaintenance">Under Maintenance</label>
     </div>
+    <div class="pt-10 buttonall">
+      <button class="button" id="add">Add</button>
+      <button class="button" id="reset">Reset</button>
+    </div>
 
-    <br />
-
-    <button id="add">Add</button>
-    <button id="reset">Reset</button>
   </form>
 
   <footer>

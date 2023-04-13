@@ -26,54 +26,58 @@
         <input type="search" placeholder="Search">
     </section>
     <hr>
-    <from calss="report">
+
+    <form class="formback" method="post">
         <div class="Lab">
             <!--Reporting The Lab ID-->
             <label for="lapid-in">Laboratory ID:</label>
-            <input type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="lapid-in" />
+            <input type="text" name="LabId" class="inputsyle" required autofocus minlength="1" maxlength="3"
+                id="lapid-in">
         </div>
-        <br />
+
         <div class="NumPc">
             <!--Reporting The PC ID-->
-            <label for="pcid-in">Pc ID:</label>
-            <input type="text" name="PcId" required minlength="1" maxlength="3" id="pcid-in" />
+            <label for="pcid-in">Number of pc:</label>
+            <input type="text" name="PcId" class="inputsyle" required minlength="1" maxlength="3" id="pcid-in">
         </div>
-        <br />
-        <div class="ProblemType">
+
+        <div class="ProblemType pb-10">
             <p>Problem type :</p>
             <!--Reporting The Type Of Problem-->
-            <input type="radio" name="PcProblem" value="software" id="softwaretype-in" required />
+            <input type="radio" name="PcProblem" value="software" id="softwaretype-in" required>
             <label for="softwaretype-in">Software</label>
 
-            <input type="radio" name="PcProblem" value="hardware" id="hardwaretype-in" required />
+            <input type="radio" name="PcProblem" value="hardware" id="hardwaretype-in" required>
             <label for="hardwaretype-in">Hardware</label>
+
         </div>
-        <br />
-        <div class="ProblemDate">
+
+        <div class="ProblemDate PB">
             <!--Reporting The Date Of Problem-->
             <label for="date-in">Problem date:</label>
-            <input type="date" name="Date" required id="date-in" />
+            <input type="date" class="inputsyle" name="Date" required id="date-in">
         </div>
-        <br />
+
         <div class="ProblemDescription">
             <!--Reporting The Problem Description-->
-            <label for="desc-in">Description of problem:</label>
-            <br />
-            <textarea id="desc-in" name="Description" cols="40" rows="5" placeholder="Write the discription"
-                required></textarea>
+            <label class="pb-10" for="Description">Description of problem:</label>
+            <br>
+            <textarea id="desc-in" name="Description" class="inputsyle" cols="40" rows="5"
+                placeholder="Write the discription" required></textarea>
         </div>
-        <button id="submit-btn">Submit</button>
-        </form>
-        <hr />
-        <footer>
-            <div>
-                <h3>
-                    Copyright Reserved &copy; 2023
-                </h3>
-            </div>
-        </footer>
-        <script src="JS/reportedProblem.js"></script>
+        <button class="button" id="submit-btn">Submit</button>
 
+
+    </form>
+    <hr />
+    <footer>
+        <div>
+            <h3>
+                Copyright Reserved &copy; 2023
+            </h3>
+        </div>
+    </footer>
+    <script src="JS/reportedProblem.js"></script>
 
 </body>
 

@@ -38,17 +38,18 @@
   </nav>
   <hr />
 
-  <form calss="report" id="editReport-form" method="post" action="HomePage.html">
+  <form class="formback" id="editReport-form" method="post" action="HomePage.html">
     <div class="Lab">
       <!--Reporting The Lab ID-->
       <label for="newLapId-in">Laboratory ID:</label>
-      <input type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="newLapId-in" value="" />
+      <input class="inputsyle" type="text" name="LabId" required autofocus minlength="1" maxlength="3" id="newLapId-in"
+        value="" />
     </div>
     <br />
     <div class="NumPc">
       <!--Reporting The PC ID-->
       <label for="newPcId-in">Number of pc:</label>
-      <input type="text" name="PcId" required minlength="1" maxlength="3" id="newPcId-in" value="" />
+      <input class="inputsyle" type="text" name="PcId" required minlength="1" maxlength="3" id="newPcId-in" value="" />
     </div>
     <br />
     <div class="ProblemType">
@@ -64,19 +65,20 @@
     <div class="ProblemDate">
       <!--Reporting The Date Of Problem-->
       <label for="newDate-in">Problem date:</label>
-      <input type="date" name="Date" required id="newDate-in" value="" />
+      <input class="inputsyle" type="date" name="Date" required id="newDate-in" value="" />
     </div>
     <br />
     <div class="ProblemDescription">
       <!--Reporting The Problem Description-->
       <label for="newDesc-in">Description of problem:</label>
       <br />
-      <textarea name="Description" cols="40" rows="5" placeholder="Write the discription" id="newDesc-in" required>
+      <textarea class="inputsyle" name="Description" cols="40" rows="5" placeholder="Write the discription"
+        id="newDesc-in" required>
         this the description of the problem
       </textarea>
     </div>
-    <button id="editSubmit-btn">Submit</button>
-    <button id="delete-btn">Delete</button>
+    <button class="button" id="editSubmit-btn">Submit</button>
+    <button class="button" id="delete-btn">Delete</button>
   </form>
   <footer>
     <div>
