@@ -9,6 +9,7 @@ const addEl = document.getElementById("add");
 const reset = document.getElementById("reset");
 const loadFromLocalStortage = JSON.parse(localStorage.getItem("Labs"));
 const lapTableEL = document.getElementById("lapTable");
+const editBtnTable = document.getElementById("editLap-table");
 let labs = [];
 window.onload = function () {
   if (loadFromLocalStortage) {
@@ -65,7 +66,7 @@ function render(laps) {
                 <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
           <td>
             <a href="EditLaboratory.html">
-              <button type="button" class="EditButton" name="button">
+              <button type="button" id="editLap-table" class="EditButton" name="button" value="${i}" onclick="saveEditIndx(${i})">
                 Edit
               </button>
             </a>
@@ -74,7 +75,7 @@ function render(laps) {
           <!-- Button to go to report page, to Report This Lab -->
           <td>
             <a href="ReportProblem.html">
-              <button type="button" class="ReportButton" name="button">
+              <button type="button" class="ReportButton" name="button" value="${i}" onclick="saveEditIndx(${i})">
                 Report
               </button>
             </a>
@@ -108,4 +109,7 @@ function render(laps) {
 </tr>
 </tfoot>
   `;
+}
+function saveEditIndx(indx) {
+  localStorage.setItem("LapIndx", JSON.stringify(indx));
 }

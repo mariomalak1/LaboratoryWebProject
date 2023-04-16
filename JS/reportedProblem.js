@@ -8,18 +8,22 @@ const hTypeEl = document.getElementById("hardwaretype-in");
 const dateEl = document.getElementById("date-in");
 const descEl = document.getElementById("desc-in");
 const submitBtn = document.getElementById("submit-btn");
-
+const loadLaps = JSON.parse(localStorage.getItem("Labs"));
+let Laps = [];
 const loadFromLocalStortage = JSON.parse(localStorage.getItem("problems"));
 const loadIndex = JSON.parse(localStorage.getItem("indx"));
+const editIndx = JSON.parse(localStorage.getItem("LapIndx"));
 let indx;
+let lapindx = editIndx;
 window.onload = function () {
   if (loadFromLocalStortage) {
     problems = loadFromLocalStortage;
     indx = loadIndex;
-    render(problems);
+    Laps = loadLaps;
+    renderInReport(lapindx);
+
   }
 };
-
 function render(problems) {
   let listItems = "";
   for (let i = 0; i < problems.length; i++) {
@@ -63,6 +67,10 @@ function render(problems) {
     </tr>
   </tfoot>
   `;
+}
+function renderInReport(lapindx) {
+  lapIdEL.value = Laps[lapindx]["labName"];
+  lapIdEL.setAttribute("readonly", true)
 }
 submitBtn.addEventListener("click", function () {
   problem["lapId"] = lapIdEL.value;

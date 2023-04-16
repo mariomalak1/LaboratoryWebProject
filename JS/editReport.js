@@ -26,10 +26,12 @@ function renderOld(problems) {
     } else if (problems[indx]["problemType"] === "Hardware") {
         newHTypeEl.checked = true;
     }
+    
     newLapIdEL.value = problems[indx]["lapId"];
     newPcIdEL.value = problems[indx]["pcId"];
     newDateEl.value = problems[indx]["date"];
     newDescEl.value = problems[indx]["description"];
+    newLapIdEL.setAttribute("readonly",true);
 }
 
 editSubmitBtn.addEventListener("click", function () {
