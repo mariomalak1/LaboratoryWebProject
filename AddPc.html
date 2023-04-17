@@ -42,27 +42,25 @@
           <div class="PCID">
             <!-- ADD PC ID -->
 
-            <input type="text" class="inputsyle" name="PcId" placeholder="PC ID" required autofocus minlength="1"
-              maxlength="3" id="1" />
+            <input type="text" class="inputsyle" name="PcId" placeholder="PC ID" required autofocus minlength="1" id="pcid" />
           </div>
           <br />
           <div class="LABID">
             <!--ADD The Lab ID-->
 
-            <input type="text" class="inputsyle" name="LabId" placeholder="Laboratory ID:" required minlength="1"
-              maxlength="3" id="2" />
+            <input type="text" class="inputsyle" name="LabId" placeholder="Laboratory ID:" required minlength="1" id="lapid" />
           </div>
           <br />
           <div class="Status">
             <!--ADD The STATUS-->
             <p>Status:</p>
-            <input type="radio" name="Status" value="Active" id="3" required />
+            <input type="radio" name="Status" value="Active" id="active" required />
             <label for="3">Active</label>
-            <input type="radio" name="Status" value="underMaintenance" id="4" required />
+            <input type="radio" name="Status" value="underMaintenance" id="underMaintenance" required />
             <label for="4">Under Maintenance</label>
           </div>
           <br />
-          <input type="submit" name="" class="button" value="Send" />
+          <input type="submit"  class="button" value="Send" id="button" />
         </div>
 
       </form>
@@ -75,6 +73,7 @@
     </div>
   </footer>
   <!-- <script src="JS/search.js"></script> -->
+  <script src="JS/addpc.js"></script>
 </body>
 
 </html>
