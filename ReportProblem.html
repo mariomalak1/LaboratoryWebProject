@@ -29,94 +29,97 @@
         <li class="nav">
           <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
         </li>
+        <li>
+          <input type="search" placeholder="Search" class="searchbar" />
+        </li>
       </ul>
     </nav>
-    <section id="saerch">
-      <input type="search" placeholder="Search" />
-    </section>
     <hr />
-
     <form class="formback" method="post">
-      <div class="Lab">
-        <!--Reporting The Lab ID-->
-        <label for="lapid-in">Laboratory ID:</label>
-        <input
-          type="text"
-          name="LabId"
-          class="inputsyle"
-          required
-          autofocus
-          minlength="1"
-          maxlength="3"
-          id="lapid-in"
-        />
-      </div>
+      <div class="formIn">
+        <div class="Lab">
+          <!--Reporting The Lab ID-->
+          <label for="lapid-in">Laboratory ID:</label>
+          <input
+            type="text"
+            name="LabId"
+            class="inputsyle"
+            required
+            autofocus
+            minlength="1"
+            maxlength="3"
+            id="lapid-in"
+          />
+        </div>
 
-      <div class="NumPc">
-        <!--Reporting The PC ID-->
-        <label for="pcid-in">Number of pc:</label>
-        <input
-          type="text"
-          name="PcId"
-          class="inputsyle"
-          required
-          minlength="1"
-          maxlength="3"
-          id="pcid-in"
-        />
-      </div>
+        <div class="NumPc">
+          <!--Reporting The PC ID-->
+          <label for="pcid-in">Number of pc:</label>
+          <input
+            type="text"
+            name="PcId"
+            class="inputsyle"
+            required
+            minlength="1"
+            maxlength="3"
+            id="pcid-in"
+          />
+        </div>
 
-      <div class="ProblemType pb-10">
-        <p>Problem type :</p>
-        <!--Reporting The Type Of Problem-->
-        <input
-          type="radio"
-          name="PcProblem"
-          value="software"
-          id="softwaretype-in"
-          required
-        />
-        <label for="softwaretype-in">Software</label>
+        <div class="ProblemType pb-10">
+          <p>Problem type :</p>
+          <!--Reporting The Type Of Problem-->
+          <input
+            type="radio"
+            name="PcProblem"
+            value="software"
+            id="softwaretype-in"
+            required
+          />
+          <label for="softwaretype-in">Software</label>
 
-        <input
-          type="radio"
-          name="PcProblem"
-          value="hardware"
-          id="hardwaretype-in"
-          required
-        />
-        <label for="hardwaretype-in">Hardware</label>
-      </div>
+          <input
+            type="radio"
+            name="PcProblem"
+            value="hardware"
+            id="hardwaretype-in"
+            required
+          />
+          <label for="hardwaretype-in">Hardware</label>
+        </div>
 
-      <div class="ProblemDate PB">
-        <!--Reporting The Date Of Problem-->
-        <label for="date-in">Problem date:</label>
-        <input
-          type="date"
-          class="inputsyle"
-          name="Date"
-          required
-          id="date-in"
-        />
-      </div>
+        <div class="ProblemDate PB">
+          <!--Reporting The Date Of Problem-->
+          <label for="date-in">Problem date:</label>
+          <input
+            type="date"
+            class="inputsyle"
+            name="Date"
+            required
+            id="date-in"
+          />
+        </div>
 
-      <div class="ProblemDescription">
-        <!--Reporting The Problem Description-->
-        <label class="pb-10" for="Description">Description of problem:</label>
-        <br />
-        <textarea
-          id="desc-in"
-          name="Description"
-          class="inputsyle"
-          cols="40"
-          rows="5"
-          placeholder="Write the discription"
-          required
-        ></textarea>
+        <div class="ProblemDescription">
+          <!--Reporting The Problem Description-->
+          <label class="pb-10" for="Description">Description of problem:</label>
+          <br />
+          <br />
+          <textarea
+            id="desc-in"
+            name="Description"
+            class="inputsyle"
+            cols="40"
+            rows="5"
+            placeholder="Write the discription"
+            required
+            style="width: 480px; height: 200px; text-align: center center;"
+          ></textarea>
+        </div>
+        <button class="button" id="submit-btn">Submit</button>
       </div>
-      <button class="button" id="submit-btn">Submit</button>
     </form>
-    <hr />
+
     <footer>
       <div>
         <h3>Copyright Reserved &copy; 2023</h3>

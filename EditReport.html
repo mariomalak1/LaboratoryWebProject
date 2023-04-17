@@ -1,137 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Laboratory|Edit A Report</title>
-    <link rel="stylesheet" href="main.css" />
-  </head>
 
-  <body>
-    <!-- <header class="pageheader" id="1">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratory|Edit A Report</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <!-- <header class="pageheader" id="1">
         <h1>Report A problem</h1>
         <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
     </header> -->
-    <nav>
-      <ul class="nav">
-        <li class="nav">
-          <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
-        </li>
-        <li class="nav">
-          <a href="AddLaboratory.html" title="AddLaboratory" id="_1"
-            >Add A Lap</a
-          >
-        </li>
-        <li class="nav">
-          <a href="LaboratoriesList.html" title="LaboratoriesList"
-            >List of Laps</a
-          >
-        </li>
-        <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
-        <li class="nav">
-          <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
-        </li>
-      </ul>
-    </nav>
-    <hr />
-
-    <form
-      class="formback"
-      id="editReport-form"
-      method="post"
-      action="HomePage.html"
-    >
+  <nav>
+    <ul class="nav">
+      <li class="nav">
+        <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
+      </li>
+      <li class="nav">
+        <a href="AddLaboratory.html" title="AddLaboratory" id="_1">Add A Lap</a>
+      </li>
+      <li class="nav">
+        <a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a>
+      </li>
+      <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
+      <li class="nav">
+        <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+      </li>
+      <li >
+        <input type="search" placeholder="Search" class="searchbar" />
+      </li>
+    </ul>
+  </nav>
+  <form class="formback" id="editReport-form" method="post" action="HomePage.html">
+    <div class="formIn">
       <div class="Lab">
         <!--Reporting The Lab ID-->
         <label for="newLapId-in">Laboratory ID:</label>
-        <input
-          class="inputsyle"
-          type="text"
-          name="LabId"
-          required
-          autofocus
-          minlength="1"
-          maxlength="3"
-          id="newLapId-in"
-          value=""
-        />
+        <input class="inputsyle" type="text" name="LabId" required autofocus minlength="1" maxlength="3"
+          id="newLapId-in" value="" />
       </div>
       <br />
       <div class="NumPc">
         <!--Reporting The PC ID-->
         <label for="newPcId-in">Number of pc:</label>
-        <input
-          class="inputsyle"
-          type="text"
-          name="PcId"
-          required
-          minlength="1"
-          maxlength="3"
-          id="newPcId-in"
-          value=""
-        />
+        <input class="inputsyle" type="text" name="PcId" required minlength="1" maxlength="3" id="newPcId-in"
+          value="" />
       </div>
       <br />
       <div class="ProblemType">
         <p>Problem type :</p>
         <!--Reporting The Type Of Problem-->
-        <input
-          type="radio"
-          name="PcProblem"
-          value="software"
-          id="newS-in"
-          required
-        />
+        <input type="radio" name="PcProblem" value="software" id="newS-in" required />
         <label for="newS-in">Software</label>
 
-        <input
-          type="radio"
-          name="PcProblem"
-          value="hardware"
-          id="newH-in"
-          required
-        />
+        <input type="radio" name="PcProblem" value="hardware" id="newH-in" required />
         <label for="newH-in">Hardware</label>
       </div>
       <br />
       <div class="ProblemDate">
         <!--Reporting The Date Of Problem-->
         <label for="newDate-in">Problem date:</label>
-        <input
-          class="inputsyle"
-          type="date"
-          name="Date"
-          required
-          id="newDate-in"
-          value=""
-        />
+        <input class="inputsyle" type="date" name="Date" required id="newDate-in" value="" />
       </div>
       <br />
       <div class="ProblemDescription">
         <!--Reporting The Problem Description-->
         <label for="newDesc-in">Description of problem:</label>
         <br />
-        <textarea
-          class="inputsyle"
-          name="Description"
-          cols="40"
-          rows="5"
-          placeholder="Write the discription"
-          id="newDesc-in"
-          required
-        >
+        <br>
+        <textarea class="inputsyle" name="Description" cols="40" rows="5" placeholder="Write the discription"
+          id="newDesc-in" required style="width: 480px; height: 200px; text-align: center center">
         this the description of the problem
-      </textarea
-        >
+      </textarea>
       </div>
       <button class="button" id="editSubmit-btn">Submit</button>
       <button class="button" id="delete-btn">Delete</button>
-    </form>
-    <footer>
-      <div>
-        <h3>Copyright Reserved &copy; 2023</h3>
-      </div>
-    </footer>
-    <script src="JS/editReport.js"></script>
-  </body>
+    </div>
+  </form>
+  <footer>
+    <div>
+      <h3>Copyright Reserved &copy; 2023</h3>
+    </div>
+  </footer>
+  <script src="JS/editReport.js"></script>
+</body>
+
 </html>
