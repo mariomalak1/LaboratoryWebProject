@@ -1,146 +1,111 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Laboratory|Edit Laboratory</title>
-    <link rel="stylesheet" href="main.css" />
-  </head>
 
-  <body>
-    <!-- <header class="pageheader" id="1">
+<head>
+  <meta charset="utf-8" />
+  <title>Laboratory|Edit Laboratory</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <!-- <header class="pageheader" id="1">
     <h1>Edit Lap</h1>
     <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
   </header> -->
-    <nav>
-      <ul class="nav">
-        <li class="nav">
-          <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
-        </li>
-        <li class="nav">
-          <a href="AddLaboratory.html" title="AddLaboratory" id="_1"
-            >Add A Lap</a
-          >
-        </li>
-        <li class="nav">
-          <a href="LaboratoriesList.html" title="LaboratoriesList"
-            >List of Laps</a
-          >
-        </li>
-        <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
-        <li class="nav">
-          <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
-        </li>
-        <li>
-          <input type="search" placeholder="Search" class="searchbar" />
-        </li>
-      </ul>
-    </nav>
+  <nav>
+    <ul class="nav">
+      <li class="nav">
+        <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
+      </li>
+      <li class="nav">
+        <a href="AddLaboratory.html" title="AddLaboratory" id="_1">Add A Lap</a>
+      </li>
+      <li class="nav">
+        <a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a>
+      </li>
+      <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
+      <li class="nav">
+        <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+      </li>
+      <li>
+        <input type="search" placeholder="Search" class="searchbar" id="search-bar" onkeyup="search()" />
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="searchlist" id="search-list">
 
-    <form class="formback" method="post">
-      <!--Input Name-->
-      <div class="formIn">
-        <div class="NameInput">
-          <label for="nweLapId-in">Name :</label>
-          <input
-            type="text"
-            name="LabName"
-            value=""
-            placeholder="Name of Lab"
-            id="nweLapId-in"
-            class="inputsyle"
-          />
+    </div>
+    <div>
+      <form class="formback" method="post">
+        <!--Input Name-->
+        <div class="formIn">
+          <div class="NameInput">
+            <label for="nweLapId-in">Name :</label>
+            <input type="text" name="LabName" value="" placeholder="Name of Lab" id="nweLapId-in" class="inputsyle" />
+          </div>
+
+          <br />
+
+          <!--Input Building Number-->
+          <div class="BuildingNumberInput">
+            <label for="newBuildNo-in">Building No. : </label>
+            <input type="number" name="LabBuildingNumber" value="" placeholder="Building Number of Lab"
+              id="newBuildNo-in" class="inputsyle" />
+          </div>
+
+          <br />
+
+          <!--Input Floor Number-->
+          <div class="FloorNumberInput">
+            <label for="newFloorNo-in">Floor No. : </label>
+            <input type="number" name="LabFloorNumber" value="" placeholder="Floor Number of Lab" id="newFloorNo-in"
+              class="inputsyle" />
+          </div>
+
+          <br />
+
+          <!--Input PCs Number-->
+          <div class="PCsNumberInput">
+            <label for="newPcNo-in">PCs Number : </label>
+            <input type="number" name="LabPCsNumber" value="" placeholder="PCs Number in Lab" id="newPcNo-in"
+              class="inputsyle" />
+          </div>
+
+          <br />
+
+          <!--Input Chair Number-->
+          <div class="ChairNumberInput">
+            <label for="newChairNo-in">Chair No. : </label>
+            <input type="number" name="LabChairNumber" value="" placeholder="Chair Number in Lab" id="newChairNo-in"
+              class="inputsyle" />
+          </div>
+
+          <!--Input Status-->
+          <div class="StatusInput">
+            <p>Status :</p>
+            <input type="radio" name="LabStatus" value="active" id="newActive-radio" checked="checked" />
+            <label for="newActive-radio">Active</label>
+            <input type="radio" name="LabStatus" value="underMaintenance" placeholder="Chair Number in Lab"
+              id="newUM-radio" />
+            <label for="newUM-radio">Under Maintenance</label>
+          </div>
+          <br>
+          <button id="editLap-Btn" class="button">Save</button>
+          <button id="deleteLap-Btn" class="button">Delete</button>
         </div>
+      </form>
+    </div>
+  </div>
 
-        <br />
+  <footer>
+    <div>
+      <h3>Copyright Reserved &copy; 2023</h3>
+    </div>
+  </footer>
+  <!-- <script src="JS/search.js"></script> -->
+  <script src="JS/editLap.js"></script>
 
-        <!--Input Building Number-->
-        <div class="BuildingNumberInput">
-          <label for="newBuildNo-in">Building No. : </label>
-          <input
-            type="number"
-            name="LabBuildingNumber"
-            value=""
-            placeholder="Building Number of Lab"
-            id="newBuildNo-in"
-            class="inputsyle"
-          />
-        </div>
+</body>
 
-        <br />
-
-        <!--Input Floor Number-->
-        <div class="FloorNumberInput">
-          <label for="newFloorNo-in">Floor No. : </label>
-          <input
-            type="number"
-            name="LabFloorNumber"
-            value=""
-            placeholder="Floor Number of Lab"
-            id="newFloorNo-in"
-            class="inputsyle"
-          />
-        </div>
-
-        <br />
-
-        <!--Input PCs Number-->
-        <div class="PCsNumberInput">
-          <label for="newPcNo-in">PCs Number : </label>
-          <input
-            type="number"
-            name="LabPCsNumber"
-            value=""
-            placeholder="PCs Number in Lab"
-            id="newPcNo-in"
-            class="inputsyle"
-          />
-        </div>
-
-        <br />
-
-        <!--Input Chair Number-->
-        <div class="ChairNumberInput">
-          <label for="newChairNo-in">Chair No. : </label>
-          <input
-            type="number"
-            name="LabChairNumber"
-            value=""
-            placeholder="Chair Number in Lab"
-            id="newChairNo-in"
-            class="inputsyle"
-          />
-        </div>
-
-        <!--Input Status-->
-        <div class="StatusInput">
-          <p>Status :</p>
-          <input
-            type="radio"
-            name="LabStatus"
-            value="active"
-            id="newActive-radio"
-            checked="checked"
-          />
-          <label for="newActive-radio">Active</label>
-          <input
-            type="radio"
-            name="LabStatus"
-            value="underMaintenance"
-            placeholder="Chair Number in Lab"
-            id="newUM-radio"
-          />
-          <label for="newUM-radio">Under Maintenance</label>
-        </div>
-        <br>
-        <button id="editLap-Btn" class="button">Save</button>
-        <button id="deleteLap-Btn" class="button">Delete</button>
-      </div>
-    </form>
-    <footer>
-      <div>
-        <h3>Copyright Reserved &copy; 2023</h3>
-      </div>
-    </footer>
-    <script src="JS/editLap.js"></script>
-  </body>
 </html>

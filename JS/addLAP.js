@@ -51,7 +51,7 @@ reset.onclick = function () {
   underMaintenance.checked = false;
 };
 function render(laps) {
-  console.log(laps)
+
   let listItems = "";
   for (let i = 0; i < laps.length; i++) {
     listItems += `

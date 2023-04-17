@@ -9,8 +9,8 @@ const newAS = document.getElementById("newActive-radio");
 const newUMS = document.getElementById("newUM-radio");
 const editLapBtn = document.getElementById("editLap-Btn");
 const deleteLapBtn = document.getElementById("deleteLap-Btn");
-let problems = [];
 const loadFromLocalStortage = JSON.parse(localStorage.getItem("problems"));
+let problems = [];
 let Laps = [];
 let indx;
 // on window load 
