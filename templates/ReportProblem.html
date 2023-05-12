@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Laboratory|Report Problem</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <!-- <header class="pageheader" id="1">
+    <h1>List of laps</h1>
+    <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
+  </header> -->
+  <nav>
+    <ul class="nav">
+      <li class="nav">
+        <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
+      </li>
+      <li class="nav">
+        <a href="AddLaboratory.html" title="AddLaboratory" id="_1">Add A Lap</a>
+      </li>
+      <li class="nav">
+        <a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a>
+      </li>
+      <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
+      <li class="nav">
+        <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
+      </li>
+      <li>
+        <input type="search" placeholder="Search" class="searchbar" id="search-bar" onkeyup="search()" />
+      </li>
+    </ul>
+  </nav>
+  <hr />
+  <form class="formback" method="post">
+    <div class="formIn">
+      <div class="Lab">
+        <!--Reporting The Lab ID-->
+        <label for="lapid-in">Laboratory ID:</label>
+        <input type="text" name="LabId" class="inputsyle" required autofocus minlength="1" maxlength="3"
+          id="lapid-in" />
+      </div>
+
+      <div class="NumPc">
+        <!--Reporting The PC ID-->
+        <label for="pcid-in">Number of pc:</label>
+        <input type="text" name="PcId" class="inputsyle" required minlength="1" maxlength="3" id="pcid-in" />
+      </div>
+
+      <div class="ProblemType pb-10">
+        <p>Problem type :</p>
+        <!--Reporting The Type Of Problem-->
+        <input type="radio" name="PcProblem" value="software" id="softwaretype-in" required />
+        <label for="softwaretype-in">Software</label>
+
+        <input type="radio" name="PcProblem" value="hardware" id="hardwaretype-in" required />
+        <label for="hardwaretype-in">Hardware</label>
+      </div>
+
+      <div class="ProblemDate PB">
+        <!--Reporting The Date Of Problem-->
+        <label for="date-in">Problem date:</label>
+        <input type="date" class="inputsyle" name="Date" required id="date-in" />
+      </div>
+
+      <div class="ProblemDescription">
+        <!--Reporting The Problem Description-->
+        <label class="pb-10" for="Description">Description of problem:</label>
+        <br />
+        <br />
+        <textarea id="desc-in" name="Description" class="inputsyle" cols="40" rows="5"
+          placeholder="Write the discription" required
+          style="width: 480px; height: 200px; text-align: center center;"></textarea>
+      </div>
+      <button class="button" id="submit-btn">Submit</button>
+    </div>
+  </form>
+
+  <footer>
+    <div>
+      <h3>Copyright Reserved &copy; 2023</h3>
+    </div>
+  </footer>
+  <script src="JS/reportedProblem.js"></script>
+</body>
+
+</html>
