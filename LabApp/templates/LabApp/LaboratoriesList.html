@@ -5,7 +5,49 @@
     <div class="searchlist" id="search-list">
     </div>
     <div>
-      <table id="lapTable"></table>
+      <table id="lapTable" border="2px">
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Building No.</th>
+              <th>Floor No.</th>
+              <th>PCs No.</th>
+              <th>Chair No.</th>
+              <th>Status</th>
+              <th>Delete\Edit</th>
+              <th>Report</th>
+          </tr>
+          <!-- Body -->
+          {% for lab in labs %}
+              <tr>
+                  <td>{{ lab.id }}</td>
+                  <td>{{ lab.building }}</td>
+                  <td>{{ lab.name }}</td>
+                  <td>{{ lab.floor }}</td>
+                  <td>{{ lab.PCsNumber }}</td>
+                  <td>{{ lab.ChairsNumber }}</td>
+                  <td>{{ lab.status }}</td>
+
+                  <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+                  <td>
+                      <a href="{% url "edit_lab" lab.id %}">
+                          <button type="button" class="EditButton" name="button">Edit</button>
+                      </a>
+                  </td>
+
+                  <!-- Button to go to report page, to Report This Lab -->
+                  <td>
+                      <a href="{% url "edit_lab" lab.id %}">
+                        <button type="button" class="ReportButton" name="button">Report</button>
+                      </a>
+                  </td>
+              </tr>
+          {% endfor %}
+          <tr>
+              <td colspan="8">Number Of Laboratories</td>
+              <td>{{ labs.count }}</td>
+          </tr>
+      </table>
     </div>
   </div>
     <script src="{% static "JS/addLAP.js" %}"></script>
