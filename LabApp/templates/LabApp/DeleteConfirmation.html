@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <article class="DeleteConfirmation">
+    {% if pageTitle == "editLab" %}
+        <p>
+            You Sure That You Want to Delete "{{ object.name }}"
+            In Floor {{ object.floor }} in Building Number {{ object.building }}
+            with Number of PCs {{ object.PCsNumber }} and Chairs {{ object.ChairsNumber }}
+        </p>
+    {% else %}
+        <P></P>
+    {% endif %}
+    </article>
+
+    <form class="form" method="post">
+        {% csrf_token %}
+        <!-- Cancel the deletion process and return him to perivous page -->
+        {% if pageTitle == "editLab" %}
+            <a href="{% url "edit_lab" object.id %}">
+                <button type="button" class="CancelButton" name="button">Cancel</button>
+            </a>
+            <a href="{% url "delete_lab" object.id %}">
+                <button type="button" class="SubmitButton" name="button">Delete</button>
+            </a>
+        {% endif %}
+    </form>
+
+{% endblock %}

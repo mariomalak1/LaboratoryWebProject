@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Lab, Pc
 from .forms import LabForm
 from django.http import HttpResponseBadRequest
+from django.contrib import messages
 # Create your views here.
 
 def list_all_labs(request):
@@ -17,6 +18,7 @@ def add_lab(request):
         form = LabForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "Lab Added Successfully")
             return redirect("list_all_labs")
     else:
         form = LabForm()
@@ -25,8 +27,7 @@ def add_lab(request):
         "title": "Add Lab",
         "buttonName": "Add",
     }
-    return render(request, "LabApp/AddLaboratory.html", context)
-
+    return render(request, "LabApp/Lab_Add_Edit.html", context)
 
 def edit_lab(request, lab_id):
     try:
@@ -37,6 +38,7 @@ def edit_lab(request, lab_id):
             form = LabForm(request.POST, instance=lab)
             if form.is_valid():
                 form.save()
+                messages.add_message(request, messages.SUCCESS, "Lab Saved Successfully")
                 return redirect("list_all_labs")
         else:
             form = LabForm(instance=lab)
@@ -44,8 +46,9 @@ def edit_lab(request, lab_id):
             "form": form,
             "title": "Edit Lab",
             "buttonName": "Save",
+            "lab": lab,
         }
-        return render(request, "LabApp/AddLaboratory.html", context)
+        return render(request, "LabApp/Lab_Add_Edit.html", context)
     except:
         # if he enters id with id as string not number
         return HttpResponseBadRequest()
@@ -55,7 +58,16 @@ def delete_lab(request, lab_id):
     try:
         id_lab = int(lab_id)
         lab = get_object_or_404(Lab, id= id_lab)
-
+        if request.method == "POST":
+            lab.delete()
+            messages.add_message(request, messages.SUCCESS, "Lab Deleted Successfully")
+            return redirect("list_all_labs")
+        else:
+            context = {
+                "pageTitle":editLab,
+                "object":lab,
+            }
+            return render(request, "LabApp/DeleteConfirmation.html", context)
     except:
         # if he enters id with id as string not number
         return HttpResponseBadRequest

@@ -48,7 +48,9 @@
               </div>
 
               <button id="editLap-Btn" type="submit" class="button">{{ buttonName }}</button>
-              <button id="deleteLap-Btn" class="button">Delete</button>
+              <a href="{% url "delete_lab" lab.id %}">
+                  <button id="deleteLap-Btn" class="button">Delete</button>
+              </a>
           </div>
       </form>
     </div>

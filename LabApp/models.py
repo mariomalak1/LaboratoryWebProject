@@ -1,7 +1,8 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
+from django.http import Http404
 # Create your models here.
 
 class Lab(models.Model):
@@ -58,3 +59,21 @@ def create_pc_objects(sender, instance, created, **kwargs):
         # Create PC objects based on PCsNumber field in Lab
         for i in range(instance.PCsNumber):
             pc = Pc.objects.create(pcId=i+1, lab=instance, status='Active')
+
+@receiver(pre_save, sender = Lab)
+def update_pc_objects(sender, instance, **kwargs):
+    try:
+        original_lab = Lab.objects.get(pk=instance.id)  # Get the original lab object before the update
+        original_pc_count = original_lab.PCsNumber
+        new_pc_count = instance.PCsNumber
+
+        if original_pc_count < new_pc_count:
+            # Add PCs for the increased count
+            for i in range(original_pc_count + 1, new_pc_count + 1):
+                Pc.objects.create(pcId=i, lab=instance, status='Active')
+        elif original_pc_count > new_pc_count:
+            # Delete excess PCs for the decreased count
+            Pc.objects.filter(pcId__gt=new_pc_count, lab=instance).delete()
+    except:
+        pass
+
