@@ -1,5 +1,5 @@
 body {
-  background-image: url("imgs/interact-abstract-5k-lb.jpg");
+  background-image: url("../../../static/imgs/interact-abstract-5k-lb.jpg");
   background-size: cover;
   color: white;
 }
@@ -178,7 +178,7 @@ footer a {
   margin: auto;
   padding: 10px 10px;
   width: 50%;
-  
+
   background: rgba(255, 9, 9, 0.021);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -283,7 +283,7 @@ label {
 .MainArticle {
   margin: 5px;
   z-index: 1;
-  
+
 }
 .container {
   margin-top: 0px;
@@ -310,6 +310,6 @@ label {
   display: flex;
   width: 450px;
   margin: 2px 15px;
-  
-  
+
+
 }

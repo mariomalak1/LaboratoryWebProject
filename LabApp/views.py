@@ -3,8 +3,16 @@ from .models import Lab, Pc
 from .forms import LabForm
 from django.http import HttpResponseBadRequest
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+def all_projects(request):
+    return render(request, "LabApp/AllProjects.html")
+
+def home(request):
+    return render(request, "LabApp/HomePage.html")
+
+@login_required
 def list_all_labs(request):
     labs = Lab.objects.all()
     context = {
@@ -13,6 +21,7 @@ def list_all_labs(request):
     }
     return render(request, "LabApp/LaboratoriesList.html", context)
 
+@login_required
 def add_lab(request):
     if request.method == "POST":
         form = LabForm(request.POST)
@@ -29,6 +38,7 @@ def add_lab(request):
     }
     return render(request, "LabApp/Lab_Add_Edit.html", context)
 
+@login_required
 def edit_lab(request, lab_id):
     try:
         id_lab = int(lab_id)
@@ -54,6 +64,7 @@ def edit_lab(request, lab_id):
         return HttpResponseBadRequest()
 
 
+@login_required
 def delete_lab(request, lab_id):
     try:
         id_lab = int(lab_id)
