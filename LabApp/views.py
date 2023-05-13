@@ -16,17 +16,14 @@ def add_lab(request):
     if request.method == "POST":
         form = LabForm(request.POST)
         if form.is_valid():
-            PCs_no = form.cleaned_data.get("PCsNumber")
             form.save()
-            for _ in PCs_no:
-                PC.objects.create(lab= form.cleaned_data.get("name"), status= "Active")
             return redirect("list_all_labs")
     else:
         form = LabForm()
-    # print(form["status"])
     context = {
         "form": form,
         "title": "Add Lab",
+        "buttonName": "Add",
     }
     return render(request, "LabApp/AddLaboratory.html", context)
 
@@ -37,7 +34,7 @@ def edit_lab(request, lab_id):
         lab = get_object_or_404(Lab, id= id_lab)
 
         if request.method == "POST":
-            form = LabForm()
+            form = LabForm(request.POST, instance=lab)
             if form.is_valid():
                 form.save()
                 return redirect("list_all_labs")
@@ -46,11 +43,12 @@ def edit_lab(request, lab_id):
         context = {
             "form": form,
             "title": "Edit Lab",
+            "buttonName": "Save",
         }
-        return render(request, "LabApp/EditLaboratory.html", context)
+        return render(request, "LabApp/AddLaboratory.html", context)
     except:
         # if he enters id with id as string not number
-        return HttpResponseBadRequest
+        return HttpResponseBadRequest()
 
 
 def delete_lab(request, lab_id):

@@ -20,9 +20,9 @@
           <!-- Body -->
           {% for lab in labs %}
               <tr>
-                  <td>{{ lab.id }}</td>
-                  <td>{{ lab.building }}</td>
+                  <td>{{ forloop.counter }}</td>
                   <td>{{ lab.name }}</td>
+                  <td>{{ lab.building }}</td>
                   <td>{{ lab.floor }}</td>
                   <td>{{ lab.PCsNumber }}</td>
                   <td>{{ lab.ChairsNumber }}</td>
