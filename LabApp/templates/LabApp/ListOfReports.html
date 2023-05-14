@@ -30,7 +30,7 @@
                   <td>{{ report.description }}</td>
                   <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
                   <td>
-                      <a href="#">
+                      <a href="{% url "edit_report" report.id %}">
                           <button type="button" class="EditButton" name="button">Edit</button>
                       </a>
                   </td>
