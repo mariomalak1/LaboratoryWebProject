@@ -48,9 +48,13 @@
               </div>
 
               <button id="editLap-Btn" type="submit" class="button">{{ buttonName }}</button>
-              <a href="{% url "delete_lab" lab.id %}">
-                  <button id="deleteLap-Btn" class="button">Delete</button>
-              </a>
+
+              {% if lab %}
+                  <a href="{% url "delete_lab" lab.id %}">
+                      <button id="deleteLap-Btn" class="button">Delete</button>
+                  </a>
+              {% endif %}
+
           </div>
       </form>
     </div>

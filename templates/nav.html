@@ -5,7 +5,7 @@
   <nav>
     <ul class="nav">
       <li class="nav">
-        <a href="#" title="HomePage">HomePage </a>
+        <a href="{% url "home" %}" title="HomePage">HomePage </a>
       </li>
       <li class="nav">
         <a href="{% url "add_lab" %}" title="AddLaboratory" >Add A Lap</a>
@@ -16,7 +16,7 @@
       <li class="nav">
           <a href="#" title="AddPc">Add PC</a></li>
       <li class="nav">
-        <a href="#" title="ListOfReports">List Of Reports</a>
+        <a href="{% url "list_all_reports" %}" title="ListOfReports">List Of Reports</a>
       </li>
       <li>
         <input type="search" placeholder="Search" class="searchbar" id="search-bar" onkeyup="search()" />

@@ -1,61 +1,54 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Laboratory|List Of Reports</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
-
-<body>
-  <!-- <header class="pageheader" id="1">
-    <h1>List of laps</h1>
-    <img decoding="async" src="https://via.placeholder.com/50x50/F00" alt="Logo">
-  </header> -->
-
-  <nav>
-    <ul class="nav">
-      <li class="nav">
-        <a href="HomePage.html" title="HomePage" id="_1">HomePage </a>
-      </li>
-      <li class="nav">
-        <a href="Lab_Add_Edit.html" title="AddLaboratory" id="_1">Add A Lap</a>
-      </li>
-      <li class="nav">
-        <a href="LaboratoriesList.html" title="LaboratoriesList">List of Laps</a>
-      </li>
-      <li class="nav"><a href="AddPc.html" title="AddPc">Add PC</a></li>
-      <li class="nav">
-        <a href="ListOfReports.html" title="ListOfReports">List Of Reports</a>
-      </li>
-      <li>
-        <input type="search" placeholder="Search" class="searchbar" id="search-bar" onkeyup="search()" />
-      </li>
-    </ul>
-  </nav>
+{% extends "base.html" %}
+{% block body %}
   <div class="container">
     <div class="searchlist" id="search-list">
-
     </div>
     <div>
-      <table id="reportsTable-el">
+      <table id="reportsTable-el" border="2px">
+          <tr>
+              <th>Sequence</th>
+              <th>ID</th>
+              <th>In Lab</th>
+              <th>Building</th>
+              <th>Floor</th>
+              <th>PC Number</th>
+              <th>Problem Type</th>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+          <!-- Body -->
+          {% for report in reports %}
+              <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ report.reportId }}</td>
+                  <td>{{ report.lab.building }}</td>
+                  <td>{{ report.lab.floor }}</td>
+                  <td>{{ report.pcNumber }}</td>
+                  <td>{{ report.problemType }}</td>
+                  <td>{{ report.data }}</td>
+                  <td>{{ report.description }}</td>
+                  <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
+                  <td>
+                      <a href="#">
+                          <button type="button" class="EditButton" name="button">Edit</button>
+                      </a>
+                  </td>
+
+                  <!-- Button to go to report page, to Report This Lab -->
+                  <td>
+                      <a href="#">
+                        <button type="button" class="ReportButton" name="button">Delete</button>
+                      </a>
+                  </td>
+              </tr>
+          {% endfor %}
+          <tr>
+              <td colspan="10">Number Of Reports</td>
+              <td>{{ reports.count }}</td>
+          </tr>
       </table>
     </div>
   </div>
-
-  <footer>
-    <div>
-      <h3>Copyright Reserved &copy; 2023</h3>
-    </div>
-  </footer>
-  <script src="JS/reportedProblem.js"></script>
-  <!-- <script src="JS/editReport.js"></script> -->
-
-  <script src="JS/renderReports.js"></script>
-  <script src="JS/search.js"></script>
-
-
-</body>
-
-</html>
+{% endblock %}

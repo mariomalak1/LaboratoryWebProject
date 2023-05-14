@@ -45,7 +45,7 @@ class Report(models.Model):
     reportId = models.PositiveSmallIntegerField(unique=True)
     lab = models.ForeignKey(Lab, on_delete=models.CASCADE)
     pcNumber = models.ForeignKey(Pc, on_delete=models.CASCADE)
-    data = models.DateField(auto_now=True)
+    date = models.DateField(auto_now=True)
     problemType = models.CharField(choices=PROBLEM_TYPE, max_length=20)
     description = models.TextField()
 
