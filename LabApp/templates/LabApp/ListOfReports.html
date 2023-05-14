@@ -7,7 +7,6 @@
       <table id="reportsTable-el" border="2px">
           <tr>
               <th>Sequence</th>
-              <th>ID</th>
               <th>In Lab</th>
               <th>Building</th>
               <th>Floor</th>
@@ -22,12 +21,12 @@
           {% for report in reports %}
               <tr>
                   <td>{{ forloop.counter }}</td>
-                  <td>{{ report.reportId }}</td>
+                  <td>{{ report.lab }}</td>
                   <td>{{ report.lab.building }}</td>
                   <td>{{ report.lab.floor }}</td>
                   <td>{{ report.pcNumber }}</td>
                   <td>{{ report.problemType }}</td>
-                  <td>{{ report.data }}</td>
+                  <td>{{ report.date }}</td>
                   <td>{{ report.description }}</td>
                   <!-- Button to Go to Edit Page, to Edit or Delete This Lab -->
                   <td>
@@ -38,14 +37,14 @@
 
                   <!-- Button to go to report page, to Report This Lab -->
                   <td>
-                      <a href="#">
+                      <a href="{% url "delete_report" report.id %}">
                         <button type="button" class="ReportButton" name="button">Delete</button>
                       </a>
                   </td>
               </tr>
           {% endfor %}
           <tr>
-              <td colspan="10">Number Of Reports</td>
+              <td colspan="9">Number Of Reports</td>
               <td>{{ reports.count }}</td>
           </tr>
       </table>

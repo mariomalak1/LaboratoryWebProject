@@ -16,17 +16,26 @@ class LabForm(forms.ModelForm):
 
 class ReportForm(forms.ModelForm):
     problemType = forms.ChoiceField(widget=forms.RadioSelect, choices=Report.PROBLEM_TYPE)
-    date = forms.DateField(label='Select a Date')
-    pcNumber = forms.ModelChoiceField(queryset=Pc.objects.none())
+    date = forms.DateField(label='Select Date Of Problem', widget=forms.DateInput(attrs={'type': 'date'}))
+    lab_disapled = forms.CharField(required=False, max_length=150, min_length=1, widget=forms.TextInput(attrs={'disabled': True}))
 
     class Meta:
         model = Report
-        exclude = ["reportId"]
+        exclude = ["reportId", "lab"]
 
-    def __init__(self, lab = None, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
+        # get lab from the form dict
+        lab = kwargs.pop('lab', None)
+
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'inputsyle'
+
         if lab:
-            self.fields["lab"].initial = lab
+            self.fields["lab_disapled"].initial = lab
             self.fields["pcNumber"].queryset = Pc.objects.filter(lab = lab)
+
+    def save(self, commit=True, lab = None):
+        if lab:
+            self.instance.lab = lab
+        super(ReportForm, self).save()

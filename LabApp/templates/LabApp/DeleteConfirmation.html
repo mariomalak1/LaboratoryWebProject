@@ -4,9 +4,18 @@
     <article class="DeleteConfirmation">
     {% if pageTitle == "editLab" %}
         <p>
-            You Sure That You Want to Delete "{{ object.name }}"
-            In Floor {{ object.floor }} in Building Number {{ object.building }}
-            with Number of PCs {{ object.PCsNumber }} and Chairs {{ object.ChairsNumber }}
+            You Sure That You Want to Delete "{{ lab.name }}"
+            In Floor {{ lab.floor }} in Building Number {{ lab.building }}
+            with Number of PCs {{ lab.PCsNumber }} and Chairs {{ lab.ChairsNumber }}
+        </p>
+    {% elif pageTitle == "editLab" %}
+        <p>
+            You Sure That You Want to Delete Report With The Next Detials ?
+            Report in lab {{ report.lab }}
+            In Floor {{ report.lab.floor }} in Building Number {{ object.lab.building }}
+            and Number of PC is {{ report.pcNumber }} register In {{ report.date }}
+            with Problem Type : {{ report.problemType }}
+            and Description : {{ report.description }}
         </p>
     {% else %}
         <P></P>
@@ -17,10 +26,17 @@
         {% csrf_token %}
         <!-- Cancel the deletion process and return him to perivous page -->
         {% if pageTitle == "editLab" %}
-            <a href="{% url "edit_lab" object.id %}">
+            <a href="{% url "edit_lab" lab.id %}">
                 <button type="button" class="CancelButton" name="button">Cancel</button>
             </a>
-            <a href="{% url "delete_lab" object.id %}">
+            <a href="{% url "delete_lab" lab.id %}">
+                <button type="button" class="SubmitButton" name="button">Delete</button>
+            </a>
+        {% elif pageTitle == "editReport" %}
+            <a href="{% url "list_all_reports" %}">
+                <button type="button" class="CancelButton" name="button">Cancel</button>
+            </a>
+            <a href="{% url "delete_report" report.id %}">
                 <button type="button" class="SubmitButton" name="button">Delete</button>
             </a>
         {% endif %}

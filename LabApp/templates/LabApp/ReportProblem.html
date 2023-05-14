@@ -1,38 +1,42 @@
 {% extends "base.html" %}
 {% block body %}
-    <form class="formback" method="post">
+    <form class="formback" method="post" novalidate>
         {% csrf_token %}
         <div class="formIn">
             <div class="Lab">
                 <!--Reporting The Lab ID-->
                 <label for="{{ form.lab.id_for_label }}">Laboratory ID:</label>
-                {{ form.lab }}
+                {{ form.lab_disapled }}
+                {{ form.lab_disapled.errors }}
             </div>
-
 
             <div class="NumPc">
                 <!--Reporting The PC ID-->
                 <label for="{{ form.pcNumber.id_for_label }}">Number of pc:</label>
                 {{ form.pcNumber }}
+                {{ form.pcNumber.errors }}
             </div>
 
-
-            <div class="ProblemType pb-10">
-                <p>Problem type :</p>
-                {{ form.problemType }}
-            </div>
-
-            <div class="ProblemDate PB">
+            <div class="ProblemDate">
                 <!--Reporting The Date Of Problem-->
-{#                <label for="{{ form.date.id_for_label }}">Problem date:</label>#}
+                <label for="{{ form.date.id_for_label }}">Problem date:</label>
                 {{ form.date }}
+                {{ form.date.errors }}
             </div>
 
             <div class="ProblemDescription">
                 <!--Reporting The Problem Description-->
                 <label class="pb-10" for="{{ form.description.id_for_label }}">Description of problem:</label>
-                <br>
                 {{ form.description }}
+                {{ form.description.errors }}
+            </div>
+
+            <div class="ProblemType">
+                <p>Problem type :</p>
+                {% for foo in form.problemType %}
+                    {{ foo }}
+                {% endfor %}
+                {{ form.problemType.errors }}
             </div>
 
             <button class="button" id="submit-btn">{{ buttonName }}</button>

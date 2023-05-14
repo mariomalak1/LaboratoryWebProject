@@ -42,15 +42,15 @@ class Pc(models.Model):
 class Report(models.Model):
     PROBLEM_TYPE = (("Software", "Software"),
         ("Hardware", "Hardware"))
-    reportId = models.PositiveSmallIntegerField(unique=True)
+    # reportId = models.PositiveSmallIntegerField(unique=True)
     lab = models.ForeignKey(Lab, on_delete=models.CASCADE)
     pcNumber = models.ForeignKey(Pc, on_delete=models.CASCADE)
     date = models.DateField(auto_now=True)
     problemType = models.CharField(choices=PROBLEM_TYPE, max_length=20)
     description = models.TextField()
 
-    class Meta:
-        unique_together = ('reportId', 'lab')
+    # class Meta:
+    #     unique_together = ('reportId', 'lab')
 
 
 @receiver(post_save, sender=Lab)

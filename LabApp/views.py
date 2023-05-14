@@ -70,7 +70,7 @@ def delete_lab(request, lab_id):
         else:
             context = {
                 "pageTitle":"editLab",
-                "object":lab,
+                "lab":lab,
             }
             return render(request, "LabApp/DeleteConfirmation.html", context)
     except:
@@ -85,30 +85,30 @@ def list_all_reports(request):
     return render(request, "LabApp/ListOfReports.html", context)
 
 def add_report(request, lab_id = None):
-    id_lab = 0
-    lab = None
-    if lab_id:
-        id_lab = int(lab_id)
-        lab = get_object_or_404(Lab, id = id_lab)
-    if request.method == "POST":
-        form = ReportForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.SUCCESS, "Report Added Successfully")
-            return redirect("list_all_reports")
-    else:
-        form = ReportForm(lab = lab)
-        # if id_lab != 0:
-            # form()
-
-    context = {
-        "form": form,
-        "title": "Add Lab",
-        "buttonName": "Add",
-    }
-    return render(request, "LabApp/ReportProblem.html", context)
-    # except:
-    #     return HttpResponseBadRequest()
+    try:
+        id_lab = 0
+        lab = None
+        if lab_id:
+            id_lab = int(lab_id)
+            lab = get_object_or_404(Lab, id = id_lab)
+        if request.method == "POST":
+            form = ReportForm(request.POST, lab = lab)
+            form.instance.lab = lab
+            if form.is_valid():
+                ## send alb to form save, as disable data doesn't send to server backend
+                form.save(lab = lab)
+                messages.add_message(request, messages.SUCCESS, "Report Added Successfully")
+                return redirect("list_all_reports")
+        else:
+            form = ReportForm(lab = lab)
+        context = {
+            "form": form,
+            "title": "Add Lab",
+            "buttonName": "Add",
+        }
+        return render(request, "LabApp/ReportProblem.html", context)
+    except:
+        return HttpResponseBadRequest()
 
 def edit_report(request):
     pass
@@ -124,7 +124,7 @@ def delete_report(request, report_id):
         else:
             context = {
                 "pageTitle": "editReport",
-                "object": report,
+                "report": report,
             }
             return render(request, "LabApp/DeleteConfirmation.html", context)
     except:
