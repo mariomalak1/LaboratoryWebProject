@@ -39,3 +39,15 @@ class ReportForm(forms.ModelForm):
         if lab:
             self.instance.lab = lab
         super(ReportForm, self).save()
+
+class AddPC_Form(forms.ModelForm):
+    status = forms.ChoiceField(widget= forms.RadioSelect, choices=Pc.STATUS)
+    class Meta:
+        model = Pc
+        fields = "__all__"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'inputsyle'
+        self.fields['status'].widget.attrs['class'] = 'no-label'

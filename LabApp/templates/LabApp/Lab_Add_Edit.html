@@ -12,6 +12,7 @@
               <div class="NameInput ">
                   <label for="{{ form.name.id_for_label }}">Name:</label>
                   {{ form.name }}
+                  {{ form.name.errors }}
               </div>
 
               <br>
@@ -19,6 +20,7 @@
               <div class="BuildingNumberInput">
                   <label for="{{ form.building.id_for_label }}">Building No. :</label>
                   {{ form.building }}
+                  {{ form.building.errors }}
               </div>
 
               <br/>
@@ -26,6 +28,7 @@
               <div class="FloorNumberInput">
                   <label for="{{ form.building.id_for_label }}">Floor No. :</label>
                   {{ form.floor }}
+                  {{ form.floor.errors }}
               </div>
 
               <br/>
@@ -33,18 +36,25 @@
               <div class="PCsNumberInput">
                   <label for="{{ form.building.id_for_label }}">PCs Number :</label>
                   {{ form.PCsNumber }}
+                  {{ form.PCsNumber.errors }}
               </div>
               <br/>
 
               <div class="ChairNumberInput">
                   <label for="{{ form.building.id_for_label }}">Chair No. :</label>
                   {{ form.ChairsNumber }}
+                  {{ form.ChairsNumber.errors }}
               </div>
               <br/>
 
               <div class="StatusInput">
                   <p>Status :</p>
-                    {{ form.status }}
+
+                  {% for status in form.status %}
+                      {{ status }}
+                  {% endfor %}
+
+                  {{ form.status.errors }}
               </div>
 
               <button id="editLap-Btn" type="submit" class="button">{{ buttonName }}</button>

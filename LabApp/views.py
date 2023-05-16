@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Lab, Pc, Report
-from .forms import LabForm, ReportForm
+from .forms import LabForm, ReportForm, AddPC_Form
 from django.http import HttpResponseBadRequest
 from django.contrib import messages
 # Create your views here.
@@ -134,6 +134,7 @@ def edit_report(request, report_id):
     except:
         # if he enters id with id as string not number
         return HttpResponseBadRequest()
+
 def delete_report(request, report_id):
     try:
         id_report = int(report_id)
@@ -152,3 +153,19 @@ def delete_report(request, report_id):
     except:
         # if he enters id with id as string not number
         return HttpResponseBadRequest
+
+def add_pc(request):
+    if request.method == "POST":
+        form = AddPC_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+        elif form.errors.as_data()["__all__"]:
+            messages.add_message(request, messages.WARNING, "This PC ID In This Lab Is Already Exist")
+    else:
+        form = AddPC_Form()
+    context = {
+        "form":form
+    }
+
+    return render(request, "LabApp/AddPc.html", context)
