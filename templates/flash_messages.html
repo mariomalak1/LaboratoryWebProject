@@ -1,0 +1,32 @@
+{% load static %}
+{% for message  in messages %}
+    {% if message.tags == "success" %}
+
+        <div class="flash" id="success">
+            <img src="{% static "imgs/404-tick.png" %}">
+            <h2>Done</h2>
+            <p>{{ message }}</p>
+            <button type="button" onclick = "closemessage()">Done</button>
+        </div>
+
+    {% elif message.tags == "warning" %}
+
+        <div class="flash" id="warning">
+            <img src="{% static "imgs/warning-icon-png-2749.png" %}">
+            <h2>Alert</h2>
+            <p>{{ message }}</p>
+            <button type="button" onclick = "closemessage()">Done</button>
+        </div>
+
+    {% elif message.tags == "error" %}
+
+        <div class="flash" id="error">
+            <img src="{% static "imgs/error-icon-25246.png" %}">
+            <h2>Error</h2>
+            <p>{{ message }}</p>
+            <button type="button" onclick = "closemessage()">Done</button>
+        </div>
+    {% endif %}
+
+    <script src="{% static "JS/flashMessage.js" %}"></script>
+{% endfor %}

@@ -23,6 +23,12 @@
         {% include "nav.html" %}
     {% endblock %}
 
+    {# flash message #}
+    {% if messages %}
+        {% include "flash_messages.html" %}
+    {% endif %}
+
+
     {% block body %}
     {% endblock %}
 

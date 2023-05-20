@@ -160,6 +160,7 @@ def add_pc(request):
         form = AddPC_Form(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "PC Added Succeessfully")
             return redirect("home")
         elif form.errors.as_data()["__all__"]:
             messages.add_message(request, messages.WARNING, "This PC ID In This Lab Is Already Exist")
@@ -176,10 +177,6 @@ def search_bar_response(request):
     labs = Lab.objects.filter(Q(name__icontains=search_string) | Q(status__icontains=search_string)).values()
     reports = Report.objects.filter(Q(lab__name__icontains=search_string)
         | Q(problemType__icontains=search_string) | Q(description__icontains=search_string)).values()
-
-    # lab = Lab.objects.filter(Q(name__icontains=search_string))
-    # print("lab", lab.all())
-
 
     dict_of_search_on_models = {
         "labs": list(labs),
