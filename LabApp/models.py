@@ -38,7 +38,6 @@ class Pc(models.Model):
     def __str__(self):
         return str(self.pcId) + " | " + str(self.lab.name)
 
-
 class Report(models.Model):
     PROBLEM_TYPE = (("Software", "Software"),
         ("Hardware", "Hardware"))

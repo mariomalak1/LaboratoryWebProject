@@ -16,4 +16,6 @@ urlpatterns = [
     path("delete_report/<str:report_id>/", views.delete_report, name="delete_report"),
 
     path("add_pc/", views.add_pc, name="add_pc"),
+
+    path("search_bar_response/", views.search_bar_response, name="search_bar_response"),
 ]

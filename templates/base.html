@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-
+    <script src="{% static "JS/search_bar.js" %}"></script>
     {% block head %}
     {% endblock %}
 
@@ -33,5 +33,14 @@
 {#            </div>#}
 {#        </footer>#}
     {% endblock %}
+
+    <script>
+        function get_search_string(){
+            let search_bar = document.getElementById("search-bar");
+            let search_string = search_bar.value;
+            callAjax(search_string);
+        }
+    </script>
+
 </body>
 </html>

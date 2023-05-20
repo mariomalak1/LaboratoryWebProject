@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Lab, Pc, Report
 from .forms import LabForm, ReportForm, AddPC_Form
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.contrib import messages
+from django.db.models import Q
 # Create your views here.
 
 def all_projects(request):
@@ -169,3 +170,19 @@ def add_pc(request):
     }
 
     return render(request, "LabApp/AddPc.html", context)
+
+def search_bar_response(request):
+    search_string = request.GET.get("search_string")
+    labs = Lab.objects.filter(Q(name__icontains=search_string) | Q(status__icontains=search_string)).values()
+    reports = Report.objects.filter(Q(lab__name__icontains=search_string)
+        | Q(problemType__icontains=search_string) | Q(description__icontains=search_string)).values()
+
+    # lab = Lab.objects.filter(Q(name__icontains=search_string))
+    # print("lab", lab.all())
+
+
+    dict_of_search_on_models = {
+        "labs": list(labs),
+        "reports": list(reports)
+    }
+    return JsonResponse(dict_of_search_on_models, safe=False)
