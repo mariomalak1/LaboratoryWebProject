@@ -1,14 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background-image: url("../../../static/imgs/interact-abstract-5k-lb.jpg");
+  background-size: cover;
   color: white;
-  background-attachment: fixed;
-  background-size: contain;
-  min-height: 100vh;
 }
 
 ul.nav {
@@ -27,6 +20,7 @@ li.nav {
   font-size: 22px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+
 }
 
 li.nav a {
@@ -43,7 +37,7 @@ li.nav a:after {
   position: absolute;
   background-color: black;
   height: 5px;
-  width: 0;
+  width: 0%;
   left: 0;
   bottom: -4px;
   transition: 0.3s;
@@ -58,37 +52,13 @@ li.nav a:hover:after {
 }
 
 
-/*AP CSS*/
-a {
-    color: white;
-    text-shadow: blue;
-    /*5 1 0 */
-    text-decoration: none;
-}
 
-.mainclass {
-    width: 80%;
-    margin: 10% auto auto;
-    text-shadow: 5px 2px 12px blue;
-}
-
-div div{
-    font-size: 50px;
-    margin: 20px;
-    background-color: rgb(0 0 0 / 35%);
-    border-radius: 5px;
-    padding: 30px;
-    align-content: center;
-    text-align: center ;
-}
-
-/*End OF AP CSS*/
-
-/*Remaining of Main CSS*/
 table {
+  margin: auto;
   text-align: center;
   width: 100%;
-  margin: 50px auto auto;
+  border-radius: 10px;
+  margin-top: 50px;
   border: 1px solid #000000;
 }
 
@@ -101,8 +71,9 @@ tfoot tr,
 thead tr th {
   background-color: #1940a9;
   font-size: 18px;
+  color: black;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.571);
   padding: 18px;
 }
 
@@ -118,12 +89,14 @@ table tfoot tr td {
   padding: 13px;
 }
 
+
 table tbody tr .overflowText {
   max-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 
 table tbody tr:hover {
   background-color: #e3080886;
@@ -138,10 +111,11 @@ table tbody tr:hover {
   background-color: #ffd000a3;
 }
 
+
 .EditButton {
   background-color: rgb(8, 0, 255);
   border-color: rgba(130, 121, 107, 0.15);
-  box-shadow: rgba(22, 25, 28, 0.1) 0 1px 0;
+  box-shadow: rgba(22, 25, 28, 0.1) 0px 1px 0px;
   color: rgb(232, 230, 227);
   text-decoration-color: initial;
 }
@@ -154,6 +128,7 @@ table tbody tr:hover {
 }
 
 footer {
+  display: block;
   width: 97.5%;
   background-color: rgb(90 90 90 / 30%);
   text-align: center;
@@ -199,21 +174,23 @@ footer a {
 
 }
 
+
 .formback {
   margin: auto;
   padding: 10px 10px;
   width: 50%;
-
+  height: 650px;
   background: rgba(255, 9, 9, 0.021);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  border: 3px solid rgba(17, 9, 255, 0.717);
+  border: 3px solid rgba(17, 9, 255, 0.3);
   justify-content: center;
   text-align: center;
-  z-index: 1;
+
 }
+
 
 .inputsyle {
   text-align: center;
@@ -225,30 +202,25 @@ footer a {
   -o-border-radius: 5px 5px;
   height: 30px;
   width: 40%;
+  background-color: transparent;
   margin-bottom: 10px;
   background: transparent;
-  color:white;
 }
-
 textarea {
   width: 00px;
   height: 100px;
 }
-
 label {
   max-width: 200px;
   min-width: 100px;
   display: inline-block;
 }
-
 .formIn {
   margin-top: 7%;
 }
-
 .inputsyle::placeholder {
   color: white;
 }
-
 .pb-10 {
   padding-bottom: 10px;
 }
@@ -278,6 +250,8 @@ label {
 }
 
 .button:hover {
+
+
   background: rgba(0, 42, 255, 0.964);
   color: white !important;
 }
@@ -294,7 +268,7 @@ label {
   margin-top: 1px;
   background-color: rgb(20 84 200 / 49%);
   height: 50px;
-  border-radius: 10px;
+  border-radius: 50px;
   border: none;
   text-align: center;
   font-size: 30px;
@@ -306,173 +280,28 @@ label {
   color: white;
 }
 
+
+
 .MainArticle {
   margin: 5px;
-  z-index: 1;
 }
 
-.container {
-  margin-top: 0;
-}
 
-.searchlist {
-  background-color: white;
-  width: 500px;
-  height: 400px;
-  position: absolute;
-  margin-left: 33.9%;
-  border-radius: 10px;
-  display: none;
-  z-index: 2;
-  top: 7%;
-  overflow-y: auto;
-}
-
-.searchlist::-webkit-scrollbar {
-  display: none;
-}
-
-.items {
-  color: #000000;
-  padding: 10px;
-  align-items: center;
-  display: flex;
-  width: 450px;
-  margin: 2px 15px;
-}
-
-/*Search Bar*/
 #resultOfSearch div:hover{
-   background-color: gray;
+  background-color: gray;
 
 }
-
 #resultOfSearch{
-
-    width: 300px;
-    height: 300px;
-    color: white;
-   background-color: black;
-    border: 5px white solid;
+  display: none;
+  margin-left: 34%;
+  margin-top: 1px;
+   width: 500px;
+   height: auto;
+   color: white;
+  background-color: black;
+   border: 5px white solid;
 }
-
 #resultOfSearch a{
-    color: white;
-    text-decoration: none;
-}
-
-/*Flash Messages*/
-.flash-container{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #152238;
-}
-
-.flash-btn{
-    padding: 10px 60px;
-    background: white;
-    cursor:pointer;
-    font-size: 20px;
-    border-radius: 30px;
-    font-weight: 500;
-}
-
-.flash{
-    width: 400px;
-    background: white;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform:translate(-50%,-50%) scale(0.1) ;
-    text-align: center;
-    padding: 0 30px 30px;
-     visibility: hidden;
-     transition: transform 0.4s,top 0.4s;
-
-}
-
-.open-flash{
-    visibility: visible;
-    top: 50%;
-    transform:translate(-50%,-50%) scale(1) ;
-}
-
-#success h2{
-    font-size: 40px;
-    font-weight: 500;
-    margin: 30px 0 10px;
-}
-
-#success button{
-    width: 100%;
-    margin-top: 50px;
-    padding:10px 0;
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-    background: #6fd649;
-    border:none;
-
-}
-
-#success img{
-    width:100px;
-    margin-top: -50px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-
-
-#warning h2{
-    font-size: 40px;
-    font-weight: 500;
-    margin: 30px 0 10px;
-}
-#warning button{
-    width: 100%;
-    margin-top: 50px;
-    padding:10px 0;
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-    background: yellow;
-    border:none;
-
-}
-#warning img{
-    width:100px;
-    margin-top: -50px;
-    border-radius: 50%;
-    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
-}
-
-#error h2{
-    font-size: 40px;
-    font-weight: 500;
-    margin: 30px 0 10px;
-}
-#error button{
-    width: 100%;
-    margin-top: 50px;
-    padding:10px 0;
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-    background: #8B0000;
-    border:none;
-
-}
-#error img{
-    width:100px;
-    margin-top: -50px;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+   color: white;
+   text-decoration: none;
 }

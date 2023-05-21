@@ -19,12 +19,31 @@ function callAjax(search_string){
 }
 
 // search bar suggestion
+let searchBar = document.getElementById("search-bar");
+let resultOfSearch = document.getElementById("resultOfSearch");
 function searchSuggestion(data){
-    let resultOfSearch = document.getElementById("resultOfSearch");
+   
     let res="";
-    for (let i = 0;i<5;i++){
-        res += " <a href = \"" + data.links[i] + "\" ><div> <h5>" + data.labs[i]+ "</h5> </div></a>";
+    
+    if (data.labs.length == 0 && data.reports.length == 0 || searchBar.value.trim() == ""){
+        resultOfSearch.style.display ="none";
+    }
+  else{
+
+    resultOfSearch.style.display ="block";
+    for (let i = 0;i < Math.min(data.labs.length,3);i++){
+        // need to write link well
+        res += " <a href = \"/edit_lab/" + data.labs[i].id + "\" " + "\" ><div> <h5>" + data.labs[i].name+ "</h5> </div></a>";
         resultOfSearch.innerHTML = res;
     }
+    for (let i = 0;i < Math.min(data.reports.length,2);i++){
+         // need to write link well
+        res += " <a href = \"/edit_report/" + data.reports[i].id + "\" " +  "\" ><div> <h5>" + data.reports[i].description + "</h5> </div></a>";
+        resultOfSearch.innerHTML = res;
+    }
+    }
 }
+
+
+
 
