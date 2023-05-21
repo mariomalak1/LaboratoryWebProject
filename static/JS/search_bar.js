@@ -5,7 +5,7 @@ function makeAjaxRequest(url, method, data) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                console.log(JSON.parse(xhr.responseText));
+                searchSuggestion(JSON.parse(xhr.responseText));
             } else {
                 errorCallback(xhr.status);
             }
@@ -17,3 +17,14 @@ function makeAjaxRequest(url, method, data) {
 function callAjax(search_string){
     makeAjaxRequest("/search_bar_response/?search_string=" + search_string, "get", {"search_string":search_string});
 }
+
+// search bar suggestion
+function searchSuggestion(data){
+    let resultOfSearch = document.getElementById("resultOfSearch");
+    let res="";
+    for (let i = 0;i<5;i++){
+        res += " <a href = \"" + data.links[i] + "\" ><div> <h5>" + data.labs[i]+ "</h5> </div></a>";
+        resultOfSearch.innerHTML = res;
+    }
+}
+
