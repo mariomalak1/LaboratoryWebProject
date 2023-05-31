@@ -241,8 +241,6 @@ label {
   height: 30px;
   transition-duration: 5ms;
   margin-top: 10px;
-
-
 }
 
 .buttonall {
@@ -250,8 +248,6 @@ label {
 }
 
 .button:hover {
-
-
   background: rgba(0, 42, 255, 0.964);
   color: white !important;
 }
